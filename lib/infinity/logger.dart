@@ -20,6 +20,10 @@ mixin Logger {
     logDebug(error.toString(), stackTrace: stackTrace, severity: Severity.error);
   }
 
+  void logInfo(Object info) {
+    logDebug(info.toString(), severity: Severity.info);
+  }
+
   void logVerbose(Object error, {String debugString, StackTrace stackTrace}) {
     logDebug(error.toString(), stackTrace: stackTrace, severity: Severity.verbose);
     if (debugString != null) {
@@ -29,7 +33,7 @@ mixin Logger {
 
   String _getPrefix(Severity severity) {
     final String _timeStamp = _getTimestamp();
-    return '[${severity.toString().replaceAll('Severity.', '').substring(0, 1).toUpperCase()}] [P3] $_timeStamp [$runtimeType] - ';
+    return '${_getSeverityColor(severity)}[${severity.toString().replaceAll('Severity.', '').substring(0, 1).toUpperCase()}] $_timeStamp [$runtimeType] - ';
   }
 
   String _getTimestamp() {
@@ -40,5 +44,24 @@ mixin Logger {
     }
 
     return '${_format(_now.hour)}:${_format(_now.minute)}:${_format(_now.second)}.${_format(_now.millisecond, padding: 3)}';
+  }
+
+  String _getSeverityColor(Severity severity) {
+    switch (severity) {
+      case Severity.verbose:
+        return '\x1b[37m';
+      case Severity.debug:
+        return '\x1b[94m';
+      case Severity.info:
+        return '\x1b[93m';
+      case Severity.warning:
+        return '\x1b[33m';
+      case Severity.error:
+        return '\x1b[91m';
+      case Severity.critical:
+        return '\x1b[31m';
+    }
+
+    return '';
   }
 }

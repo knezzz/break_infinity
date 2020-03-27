@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a109aa32-9000-4f6c-b6da-4697a8cd7a73" name="Default Changelist" comment="" />
+    <list default="true" id="a109aa32-9000-4f6c-b6da-4697a8cd7a73" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/analysis_options.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/infinity.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/infinity_constants.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/infinity_extensions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/infinity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/logger.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/logger.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/infinity_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/infinity_test.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +40,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1VCNsOqbJHypESxQMVP3dHbiIDe" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,9 +59,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/infinity" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Flutter Test.tests in infinity_test.dart">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -87,6 +108,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Addition" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Addition" />
+      <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Biggest number addition" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Biggest number addition" />
+      <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Biggest number multiplication" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Biggest number multiplication" />
+      <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Factorials" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Factorials" />
+      <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Power" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Power" />
+      <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="FlutterTestConfigType" factoryName="Flutter Test">
       <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
       <method v="2" />
@@ -111,6 +157,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter Test.Factorials" />
+        <item itemvalue="Flutter Test.Addition" />
+        <item itemvalue="Flutter Test.Power" />
+        <item itemvalue="Flutter Test.Biggest number multiplication" />
+        <item itemvalue="Flutter Test.Biggest number addition" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -142,52 +197,61 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="424" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1576756512386" />
+    <state x="3006" y="379" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584711210488">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="3006" y="379" key="#com.intellij.fileTypes.FileTypeChooser/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584711210488" />
     <state x="697" y="348" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1576754778615">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="697" y="348" key="#com.intellij.ide.util.TreeFileChooserDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1576754778615" />
-    <state width="1398" height="836" key="GridCell.Tab.0.bottom" timestamp="1584637627877">
+    <state width="1398" height="836" key="GridCell.Tab.0.bottom" timestamp="1585325765061">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state width="1358" height="271" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1576756728293" />
-    <state width="1398" height="836" key="GridCell.Tab.0.bottom/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584637627877" />
-    <state width="1398" height="836" key="GridCell.Tab.0.center" timestamp="1584637627876">
+    <state width="1398" height="836" key="GridCell.Tab.0.bottom/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585325765061" />
+    <state width="1398" height="836" key="GridCell.Tab.0.center" timestamp="1585325765060">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state width="1358" height="271" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1576756728292" />
-    <state width="1398" height="836" key="GridCell.Tab.0.center/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584637627876" />
-    <state width="1398" height="836" key="GridCell.Tab.0.left" timestamp="1584637627875">
+    <state width="1398" height="836" key="GridCell.Tab.0.center/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585325765060" />
+    <state width="1398" height="836" key="GridCell.Tab.0.left" timestamp="1585325765059">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state width="1358" height="271" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1576756728292" />
-    <state width="1398" height="836" key="GridCell.Tab.0.left/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584637627875" />
-    <state width="1398" height="836" key="GridCell.Tab.0.right" timestamp="1584637627877">
+    <state width="1398" height="836" key="GridCell.Tab.0.left/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585325765059" />
+    <state width="1398" height="836" key="GridCell.Tab.0.right" timestamp="1585325765061">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state width="1358" height="271" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1576756728292" />
-    <state width="1398" height="836" key="GridCell.Tab.0.right/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584637627877" />
-    <state width="500" height="1078" key="SwitcherDM" timestamp="1584637225925">
+    <state width="1398" height="836" key="GridCell.Tab.0.right/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585325765061" />
+    <state x="2789" y="208" key="SettingsEditor" timestamp="1584710556589">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="2789" y="208" key="SettingsEditor/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584710556589" />
+    <state width="500" height="1078" key="SwitcherDM" timestamp="1585325656409">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1576756560190" />
-    <state width="500" height="1078" key="SwitcherDM/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584637225925" />
+    <state width="500" height="1078" key="SwitcherDM/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585325656409" />
     <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1584610224112">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.FileHistoryDialog/2560.-711.1440.2560/0.23.2560.1417@2560.-711.1440.2560" timestamp="1584610224112" />
-    <state x="2960" y="326" width="639" height="486" key="find.popup" timestamp="1584619173810">
+    <state x="2960" y="326" width="639" height="486" key="find.popup" timestamp="1585325367191">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state x="2960" y="326" width="639" height="486" key="find.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584619173810" />
-    <state width="600" height="424" key="javadoc.popup" timestamp="1576754161674">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="2960" y="326" width="639" height="486" key="find.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585325367191" />
+    <state width="450" height="1027" key="javadoc.popup" timestamp="1585139888521">
+      <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1576754161674" />
-    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup" timestamp="1584553098351">
+    <state width="450" height="1027" key="javadoc.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585139888521" />
+    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup" timestamp="1584721671168">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state x="625" y="272" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1576753603739" />
-    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584553098351" />
+    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584721671168" />
   </component>
   <component name="masterDetails">
     <states>
