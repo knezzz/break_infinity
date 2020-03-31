@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a109aa32-9000-4f6c-b6da-4697a8cd7a73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/infinity/infinity_basic_operators.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/infinity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/infinity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/infinity_extensions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/infinity_hyper_operators.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/infinity_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/infinity_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/infinity/infinity_basic_operators.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/infinity_basic_operators.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +59,18 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/infinity" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Flutter Test.tests in infinity_test.dart">
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -164,18 +171,6 @@
         <item itemvalue="Flutter Test.Biggest number multiplication" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />

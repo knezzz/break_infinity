@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'package:infinity/infinity/infinity.dart';
 import 'package:infinity/infinity/infinity_constants.dart';
 
-extension InfinityBasicOperators on Infinity {
+extension InfinityBasicExtensions on Infinity {
   Infinity round() {
     logDebug('round on ${toString()}');
     if (mantissa < 0) {
@@ -230,8 +230,7 @@ extension InfinityBasicOperators on Infinity {
     if (sign == 0) {
       return Infinity.nan();
     } else if (layer > 0) {
-      final num _layer = layer - 1;
-      return Infinity.fromComponents(mantissa.sign.toInt(), _layer, mantissa.abs());
+      return Infinity.fromComponents(mantissa.sign.toInt(), --layer, mantissa.abs());
     } else {
       return Infinity.fromComponents(1, 0, log10(mantissa));
     }
@@ -249,7 +248,7 @@ extension InfinityBasicOperators on Infinity {
       return this;
     }
 
-    Infinity _result = (absLog10().multiply(other)).pow10();
+    Infinity _result = (absLog10().multiply(other))._pow10();
 
     /// Check if end result should be round number
     if (other.isInt && isInt) {
@@ -267,13 +266,12 @@ extension InfinityBasicOperators on Infinity {
     return pow(other.reciprocal());
   }
 
-  Infinity pow10() {
-    logDebug('pow10 on ${toString()}');
+  Infinity _pow10() {
+    logDebug('_pow10 on ${toString()}');
 
     if (!layer.isFinite || !mantissa.isFinite) {
       return Infinity.nan();
     }
-    final num _layer = layer + 1;
 
     if (layer == 0) {
       final num _newMag = math.pow(10, sign * mantissa);
@@ -283,15 +281,15 @@ extension InfinityBasicOperators on Infinity {
         if (sign == 0) {
           return Infinity.one();
         } else {
-          return Infinity.fromComponents(sign, _layer, mantissa, false);
+          return Infinity.fromComponents(sign, ++layer, log10(mantissa));
         }
       }
     }
 
     if (sign > 0 && mantissa > 0) {
-      return Infinity.fromComponents(sign, _layer, mantissa);
+      return Infinity.fromComponents(sign, ++layer, mantissa);
     } else if (sign < 0 && mantissa > 0) {
-      return Infinity.fromComponents(-sign, _layer, -mantissa);
+      return Infinity.fromComponents(-sign, ++layer, -mantissa);
     }
 
     return Infinity.one();
@@ -316,7 +314,7 @@ extension InfinityBasicOperators on Infinity {
     if (layer == 0) {
       return sign * mantissa;
     } else if (layer == 1) {
-      return double.parse('${normalizedMantissa}e$normalizedExponent');
+      return double.parse('${normalizedMantissa}e${normalizedExponent}');
     } else {
       return mantissa > 0 ? sign > 0 ? double.infinity : double.negativeInfinity : 0;
     }
