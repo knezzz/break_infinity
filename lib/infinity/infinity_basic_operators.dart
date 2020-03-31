@@ -230,7 +230,8 @@ extension InfinityBasicExtensions on Infinity {
     if (sign == 0) {
       return Infinity.nan();
     } else if (layer > 0) {
-      return Infinity.fromComponents(mantissa.sign.toInt(), --layer, mantissa.abs());
+      final num _layer = layer - 1;
+      return Infinity.fromComponents(mantissa.sign.toInt(), _layer, mantissa.abs());
     } else {
       return Infinity.fromComponents(1, 0, log10(mantissa));
     }
@@ -272,6 +273,7 @@ extension InfinityBasicExtensions on Infinity {
     if (!layer.isFinite || !mantissa.isFinite) {
       return Infinity.nan();
     }
+    final num _layer = layer + 1;
 
     if (layer == 0) {
       final num _newMag = math.pow(10, sign * mantissa);
@@ -314,7 +316,7 @@ extension InfinityBasicExtensions on Infinity {
     if (layer == 0) {
       return sign * mantissa;
     } else if (layer == 1) {
-      return double.parse('${normalizedMantissa}e${normalizedExponent}');
+      return num.parse('${normalizedMantissa}e$normalizedExponent');
     } else {
       return mantissa > 0 ? sign > 0 ? double.infinity : double.negativeInfinity : 0;
     }

@@ -61,10 +61,9 @@ class Infinity with Logger {
 
   num mantissa;
   num exponent;
-
   int _sign;
-
   int get sign => _sign;
+
   set sign(int value) {
     if (value == 0) {
       _sign = 0;
@@ -81,7 +80,7 @@ class Infinity with Logger {
     if (sign == 0) {
       return 0;
     } else if (layer == 0) {
-      final int _exp = log10(mantissa).floor();
+      final num _exp = log10(mantissa).floor();
       num _man;
 
       if (mantissa == 5e-324) {
@@ -130,12 +129,12 @@ class Infinity with Logger {
     fromMantissaExponent(normalizedMantissa, value);
   }
 
-  final Map<int, num> _powersOf10 = <int, num>{};
+  final Map<num, num> _powersOf10 = <num, num>{};
 
-  num powerOf10(int power) {
+  num powerOf10(num power) {
     if (_powersOf10 == null) {
       logVerbose('Adding powers of 10 lookup table!', debugString: toDebugString());
-      for (int i = numberExpMin + 1; i <= numberExpMax; i++) {
+      for (num i = numberExpMin + 1; i <= numberExpMax; i++) {
         _powersOf10.putIfAbsent(i, () {
           return num.tryParse('1e$i');
         });
@@ -252,8 +251,8 @@ class Infinity with Logger {
       return Infinity.fromNum(a.sign * a.mantissa + b.sign * b.mantissa);
     }
 
-    final int layerA = a.layer.toInt() * a.mantissa.toInt().sign;
-    final int layerB = b.layer.toInt() * b.mantissa.toInt().sign;
+    final num layerA = a.layer * a.mantissa.sign;
+    final num layerB = b.layer * b.mantissa.sign;
 
     if (layerA - layerB >= 2) {
       return a;
@@ -373,8 +372,8 @@ class Infinity with Logger {
   int cmpAbs(Infinity other) {
     logDebug('cmpAbs ${toString()} and ${other.toString()}');
 
-    final int layerA = (mantissa > 0 ? layer : -layer).toInt();
-    final int layerB = (other.mantissa > 0 ? other.layer : -other.layer).toInt();
+    final num layerA = mantissa > 0 ? layer : -layer;
+    final num layerB = other.mantissa > 0 ? other.layer : -other.layer;
 
     if (layerA > layerB) {
       return 1;

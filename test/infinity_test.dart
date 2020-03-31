@@ -284,11 +284,31 @@ void main() {
       expect(_infinity.toNumber(), 65536);
     });
 
-    test('Huge teterate', () {
+    test('Bigger teterate', () {
       Infinity _infinity = Infinity.fromNum(2);
       expect(_infinity.toNumber(), 2);
 
       _infinity = _infinity.tetrate(height: 5);
+      print('${_infinity.toString()}');
+
+      expect(_infinity.toNumber(), double.infinity);
+    });
+
+    test('Huge teterate', () {
+      Infinity _infinity = Infinity.fromNum(2);
+      expect(_infinity.toNumber(), 2);
+
+      _infinity = _infinity.tetrate(height: 9);
+      print('${_infinity.toString()}');
+
+      expect(_infinity.toNumber(), double.infinity);
+    });
+
+    test('Infinity tetrate', () {
+      Infinity _infinity = Infinity.fromNum(1e308);
+      expect(_infinity.toNumber(), 1e308);
+
+      _infinity = _infinity.tetrate(height: 1e308);
       print('${_infinity.toString()}');
 
       expect(_infinity.toNumber(), double.infinity);

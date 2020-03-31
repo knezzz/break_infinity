@@ -111,7 +111,7 @@ extension InfinityHyperExtensions on Infinity {
     }
 
     n -= 1;
-    double l = 0.9189385332046727; //0.5*math.log(2*Math.PI)
+    num l = 0.9189385332046727; //0.5*math.log(2*Math.PI)
     l = l + (n + 0.5) * math.log(n);
     l = l - n;
     num n2 = n * n;
@@ -139,7 +139,7 @@ extension InfinityHyperExtensions on Infinity {
   /// If payload != 1, then this is 'iterated exponentiation', the result of exping (payload) to base (this) (height) times. https://andydude.github.io/tetration/archives/tetration2/ident.html
   /// Works with negative and positive real heights.
   Infinity tetrate({num height = 2, Infinity other}) {
-    other ??= Infinity.fromComponents(1, 0, 1);
+    other ??= Infinity.one();
     logDebug('Tetrate ${toString()} and ${other.toString()} ($height)');
 
     if (height == double.infinity) {
@@ -148,11 +148,11 @@ extension InfinityHyperExtensions on Infinity {
     }
 
     if (height < 0) {
-      return iteratedLog(times: -height.toInt(), base: other);
+      return iteratedLog(times: -height, base: other);
     }
 
     num oldheight = height;
-    height = height.truncate();
+    height = height.truncateToDouble();
 
     num fracheight = oldheight - height;
 
@@ -168,23 +168,28 @@ extension InfinityHyperExtensions on Infinity {
         if (this == Infinity.fromNum(10)) {
           other = other.layerAdd10(fracheight);
         } else {
-          other = other.layerAdd(fracheight.toInt(), this);
+          other = other.layerAdd(fracheight, this);
         }
       }
     }
 
     for (int i = 0; i < height; ++i) {
+      logVerbose('Tetrate -- in height loop $i / $height - ${toString()}');
+
       other = pow(other);
       //bail if we're NaN
       if (!other.layer.isFinite || !other.mantissa.isFinite) {
+        logVerbose('Tetrate -- Mantissa or layer is not finite anymore! $i / $height - ${toString()}');
         return other;
       }
       //shortcut
       if (other.layer - layer > 3) {
-        return Infinity.fromComponents(other.sign, other.layer + height - i - 1, other.mantissa, false);
+        logVerbose('Tetrate -- Layer difference is too big, taking shortcut! $i / $height - ${toString()}');
+        return Infinity.fromComponents(other.sign, other.layer + (height - i - 1), other.mantissa, false);
       }
       //give up after 100 iterations if nothing is happening
       if (i > 100) {
+        logVerbose('Tetrate -- Nothing happend for a 100 iterations, returning! $i / $height - ${toString()}');
         return other;
       }
     }
@@ -286,7 +291,7 @@ extension InfinityHyperExtensions on Infinity {
   }
 
   //layeradd: like adding 'diff' to the number's slog(base) representation. Very similar to tetrate base 'base' and iterated log base 'base'.
-  Infinity layerAdd(int diff, Infinity base) {
+  Infinity layerAdd(num diff, Infinity base) {
     num slogthis = this.slog(base: base).toNumber();
     num slogdest = slogthis + diff;
 
@@ -304,12 +309,12 @@ extension InfinityHyperExtensions on Infinity {
   Infinity layerAdd10(num value) {
     num other = Infinity.fromNum(value).toNumber();
     if (other >= 1) {
-      int layerAdd = other.truncate();
+      num layerAdd = other.truncate();
       other -= layerAdd;
       layer += layerAdd;
     }
     if (other <= -1) {
-      int layerAdd = other.truncate();
+      num layerAdd = other.truncate();
       other -= layerAdd;
       layer += layerAdd;
       if (layer < 0) {
@@ -328,7 +333,7 @@ extension InfinityHyperExtensions on Infinity {
 
     //layerAdd10: like adding 'other' to the number's slog(base) representation. Very similar to tetrate base 10 and iterated log base 10. Also equivalent to adding a fractional amount to the number's layer in its break_eternity.js representation.
     if (other > 0) {
-      int subtractlayerslater = 0;
+      num subtractlayerslater = 0;
       //Ironically, this edge case would be unnecessary if we had 'negative layers'.
       while (mantissa.isFinite && mantissa < 10) {
         mantissa = math.pow(10, mantissa);
@@ -395,17 +400,17 @@ extension InfinityHyperExtensions on Infinity {
 
   /// iterated log/repeated log: The result of applying log(base) 'times' times in a row. Approximately equal to subtracting (times) from the number's slog representation. Equivalent to tetrating to a negative height.
   /// Works with negative and positive real heights.
-  Infinity iteratedLog({int times = 1, Infinity base}) {
+  Infinity iteratedLog({num times = 1, Infinity base}) {
     if (times < 0) {
       return base.tetrate(height: -times.toDouble(), other: this);
     }
 
-    final int fullTimes = times;
-    times = times.truncate();
-    final int fraction = fullTimes - times;
+    final num fullTimes = times;
+    times = times.truncateToDouble();
+    final num fraction = fullTimes - times;
 
     if (layer - base.layer > 3) {
-      final int layerLoss = math.min(times, layer - base.layer - 3).toInt();
+      final num layerLoss = math.min(times, layer - base.layer - 3);
       times -= layerLoss;
       layer -= layerLoss;
     }
@@ -450,10 +455,10 @@ extension InfinityHyperExtensions on Infinity {
       return Infinity.one().neg();
     }
 
-    int result = 0;
+    num result = 0;
     Infinity copy = this;
     if (copy.layer - base.layer > 3) {
-      int layerloss = (copy.layer - base.layer - 3).toInt();
+      num layerloss = copy.layer - base.layer - 3;
       result += layerloss;
       copy.layer -= layerloss;
     }
