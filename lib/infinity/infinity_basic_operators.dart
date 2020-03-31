@@ -230,7 +230,7 @@ extension InfinityBasicOperators on Infinity {
     if (sign == 0) {
       return Infinity.nan();
     } else if (layer > 0) {
-      final int _layer = layer - 1;
+      final num _layer = layer - 1;
       return Infinity.fromComponents(mantissa.sign.toInt(), _layer, mantissa.abs());
     } else {
       return Infinity.fromComponents(1, 0, log10(mantissa));
@@ -273,7 +273,7 @@ extension InfinityBasicOperators on Infinity {
     if (!layer.isFinite || !mantissa.isFinite) {
       return Infinity.nan();
     }
-    final int _layer = layer + 1;
+    final num _layer = layer + 1;
 
     if (layer == 0) {
       final num _newMag = math.pow(10, sign * mantissa);

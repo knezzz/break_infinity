@@ -75,7 +75,7 @@ class Infinity with Logger {
     }
   }
 
-  int layer;
+  num layer;
 
   num get normalizedMantissa {
     if (sign == 0) {
@@ -252,8 +252,8 @@ class Infinity with Logger {
       return Infinity.fromNum(a.sign * a.mantissa + b.sign * b.mantissa);
     }
 
-    final int layerA = a.layer * a.mantissa.toInt().sign;
-    final int layerB = b.layer * b.mantissa.toInt().sign;
+    final int layerA = a.layer.toInt() * a.mantissa.toInt().sign;
+    final int layerB = b.layer.toInt() * b.mantissa.toInt().sign;
 
     if (layerA - layerB >= 2) {
       return a;
@@ -373,8 +373,8 @@ class Infinity with Logger {
   int cmpAbs(Infinity other) {
     logDebug('cmpAbs ${toString()} and ${other.toString()}');
 
-    final int layerA = mantissa > 0 ? layer : -layer;
-    final int layerB = other.mantissa > 0 ? other.layer : -other.layer;
+    final int layerA = (mantissa > 0 ? layer : -layer).toInt();
+    final int layerB = (other.mantissa > 0 ? other.layer : -other.layer).toInt();
 
     if (layerA > layerB) {
       return 1;
@@ -407,7 +407,7 @@ class Infinity with Logger {
       return '${normalizedMantissa}e$normalizedExponent';
     } else {
       if (layer <= maxEsInRow) {
-        return (sign == -1 ? '-' : '') + ''.padRight(layer, 'e') + mantissa.toString();
+        return (sign == -1 ? '-' : '') + ''.padRight(layer.toInt(), 'e') + mantissa.toString();
       } else {
         return (sign == -1 ? '-' : '') + '(${'e^$layer'})' + mantissa.toString();
       }
@@ -425,7 +425,7 @@ class Infinity with Logger {
       return '${valueWithDecimalPlaces(normalizedMantissa, places)}e${valueWithDecimalPlaces(normalizedExponent, places)}';
     } else {
       if (layer <= maxEsInRow) {
-        return (sign == -1 ? '-' : '') + ''.padRight(layer, 'e') + valueWithDecimalPlaces(mantissa, places);
+        return (sign == -1 ? '-' : '') + ''.padRight(layer.toInt(), 'e') + valueWithDecimalPlaces(mantissa, places);
       } else {
         return (sign == -1 ? '-' : '') + '(${'e^$layer'})' + valueWithDecimalPlaces(mantissa, places);
       }
