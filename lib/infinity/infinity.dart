@@ -26,26 +26,33 @@ class Infinity with Logger {
     sign = 0;
   }
 
-  Infinity.fromNum(num value) {
+  Infinity.fromNum(num value, [bool normalizeNumber = true]) {
     logVerbose('--> Infinity from number: $value');
     mantissa = value.toDouble().abs();
     _sign = value.sign.toInt();
     layer = 0;
 
-    normalize();
+    if (normalizeNumber) {
+      normalize();
+    }
   }
 
-  Infinity.fromComponents(this._sign, this.layer, this.mantissa) {
+  Infinity.fromComponents(this._sign, this.layer, this.mantissa, [bool normalizeNumber = true]) {
     logVerbose('--> Infinity from components: [$_sign, $layer, $mantissa]');
-    normalize();
+
+    if (normalizeNumber) {
+      normalize();
+    }
   }
 
-  void fromMantissaExponent(num mag, num exponent) {
+  void fromMantissaExponent(num mag, num exponent, [bool normalizeNumber = true]) {
     layer = 1;
     _sign = mag.toInt().sign;
     _normalizeMantissa = exponent + log10(mag.abs());
 
-    normalize();
+    if (normalizeNumber) {
+      normalize();
+    }
 
     logDebug('Value: ${toStringWithDecimalPlaces(places: 1)}');
   }
@@ -75,19 +82,19 @@ class Infinity with Logger {
       return 0;
     } else if (layer == 0) {
       final int _exp = log10(mantissa).floor();
-      int _man;
+      num _man;
 
       if (mantissa == 5e-324) {
         _man = 5;
       } else {
-        _man = mantissa ~/ powerOf10(_exp);
+        _man = mantissa / powerOf10(_exp);
       }
 
       return sign * _man;
     } else if (layer == 1) {
       final num _residue = mantissa - mantissa.floor();
 
-      return (sign * pow(10, _residue)).round();
+      return sign * pow(10, _residue);
     }
 
     return sign;
@@ -311,7 +318,7 @@ class Infinity with Logger {
     }
 
     if (layer == other.layer && mantissa == -other.mantissa) {
-      return Infinity.fromComponents(sign * other.sign, 0, 1);
+      return Infinity.fromComponents(sign * other.sign, 0, 1, false);
     }
 
     final bool _compare = layer > other.layer || (layer == other.layer && mantissa.abs() > other.mantissa.abs());
@@ -400,9 +407,9 @@ class Infinity with Logger {
       return '${normalizedMantissa}e$normalizedExponent';
     } else {
       if (layer <= maxEsInRow) {
-        return (sign == -1 ? '-' : '') + ''.padRight(layer, 'e') + mantissa.toStringAsFixed(0);
+        return (sign == -1 ? '-' : '') + ''.padRight(layer, 'e') + mantissa.toString();
       } else {
-        return (sign == -1 ? '-' : '') + '${'e^$layer'}' + mantissa.toStringAsFixed(0);
+        return (sign == -1 ? '-' : '') + '(${'e^$layer'})' + mantissa.toString();
       }
     }
   }
@@ -420,7 +427,7 @@ class Infinity with Logger {
       if (layer <= maxEsInRow) {
         return (sign == -1 ? '-' : '') + ''.padRight(layer, 'e') + valueWithDecimalPlaces(mantissa, places);
       } else {
-        return (sign == -1 ? '-' : '') + '${'e^$layer'}' + valueWithDecimalPlaces(mantissa, places);
+        return (sign == -1 ? '-' : '') + '(${'e^$layer'})' + valueWithDecimalPlaces(mantissa, places);
       }
     }
   }

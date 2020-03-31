@@ -273,6 +273,28 @@ void main() {
     });
   });
 
+  group('Tetrate', () {
+    test('Small tetrate', () {
+      Infinity _infinity = Infinity.fromNum(2);
+      expect(_infinity.toNumber(), 2);
+
+      _infinity = _infinity.tetrate(height: 4);
+      print('${_infinity.toString()}');
+
+      expect(_infinity.toNumber(), 65536);
+    });
+
+    test('Huge teterate', () {
+      Infinity _infinity = Infinity.fromNum(2);
+      expect(_infinity.toNumber(), 2);
+
+      _infinity = _infinity.tetrate(height: 5);
+      print('${_infinity.toString()}');
+
+      expect(_infinity.toNumber(), double.infinity);
+    });
+  });
+
 //
 //  group('Factorials', () {
 //    test('Simple factorials', () {
