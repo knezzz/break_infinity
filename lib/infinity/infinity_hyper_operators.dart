@@ -181,7 +181,7 @@ extension InfinityHyperExtensions on Infinity {
       }
       //shortcut
       if (other.layer - layer > 3) {
-        return Infinity.fromComponents(other.sign, other.layer + (height.toInt() - i - 1), other.mantissa, false);
+        return Infinity.fromComponents(other.sign, other.layer + height - i - 1, other.mantissa, false);
       }
       //give up after 100 iterations if nothing is happening
       if (i > 100) {
@@ -405,7 +405,7 @@ extension InfinityHyperExtensions on Infinity {
     final int fraction = fullTimes - times;
 
     if (layer - base.layer > 3) {
-      final int layerLoss = math.min(times, layer - base.layer - 3);
+      final int layerLoss = math.min(times, layer - base.layer - 3).toInt();
       times -= layerLoss;
       layer -= layerLoss;
     }
@@ -453,7 +453,7 @@ extension InfinityHyperExtensions on Infinity {
     int result = 0;
     Infinity copy = this;
     if (copy.layer - base.layer > 3) {
-      int layerloss = copy.layer - base.layer - 3;
+      int layerloss = (copy.layer - base.layer - 3).toInt();
       result += layerloss;
       copy.layer -= layerloss;
     }
