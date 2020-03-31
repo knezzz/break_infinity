@@ -35,6 +35,8 @@ class Infinity with Logger {
     if (normalizeNumber) {
       normalize();
     }
+
+    logVerbose('------ Infinity normalized: ${toDebugString()}');
   }
 
   Infinity.fromComponents(this._sign, this.layer, this.mantissa, [bool normalizeNumber = true]) {
@@ -43,6 +45,8 @@ class Infinity with Logger {
     if (normalizeNumber) {
       normalize();
     }
+
+    logVerbose('------ Infinity normalized: ${toDebugString()}');
   }
 
   void fromMantissaExponent(num mag, num exponent, [bool normalizeNumber = true]) {
@@ -94,7 +98,7 @@ class Infinity with Logger {
     } else if (layer == 1) {
       final num _residue = mantissa - mantissa.floor();
 
-      return sign * pow(10, _residue);
+      return (sign * pow(10, _residue)).round();
     }
 
     return sign;
