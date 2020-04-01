@@ -1,7 +1,5 @@
 enum Severity { verbose, debug, info, warning, error, critical }
 
-/// Logger is mixin that will log messages to console if debug is set to on
-/// [debug] will default to false so it doesn't clog the terminal
 mixin Logger {
   final bool debug = true;
   final Severity showSeverity = Severity.verbose;

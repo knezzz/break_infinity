@@ -284,7 +284,7 @@ void main() {
       expect(_infinity.toNumber(), 65536);
     });
 
-    test('Huge teterate', () {
+    test('Big tetrate', () {
       Infinity _infinity = Infinity.fromNum(2);
       expect(_infinity.toNumber(), 2);
 
@@ -293,8 +293,69 @@ void main() {
 
       expect(_infinity.toNumber(), double.infinity);
     });
+
+    test('Huge tetrate', () {
+      Infinity _infinity = Infinity.fromNum(2);
+      expect(_infinity.toNumber(), 2);
+
+      _infinity = _infinity.tetrate(height: 6);
+      print('${_infinity.toString()}');
+
+      expect(_infinity.toNumber(), double.infinity);
+    });
+
+    test('Infinity tetrate', () {
+      Infinity _infinity = Infinity.fromNum(1e308);
+      expect(_infinity.toNumber(), 1e308);
+
+      _infinity = _infinity.tetrate(height: 1e308);
+
+      expect(_infinity.toNumber(), double.infinity);
+      expect(_infinity.toString(), '(e^1e+308)310.48855071650047');
+    });
   });
 
+  group('Pentate', () {
+    test('Small pentate', () {
+      Infinity _infinity = Infinity.fromNum(2);
+      expect(_infinity.toNumber(), 2);
+
+      _infinity = _infinity.pentate(height: 3);
+      print('${_infinity.toString()}');
+
+      expect(_infinity.toNumber(), 65536);
+    });
+
+    test('Weird pentate', () {
+      Infinity _infinity = Infinity.fromNum(2.1);
+      expect(_infinity.toNumber(), 2.1);
+
+      _infinity = _infinity.pentate(height: 3);
+      print('${_infinity.toString()}');
+
+      expect(_infinity.toNumber(), double.infinity);
+    });
+
+    test('Big pentate', () {
+      Infinity _infinity = Infinity.fromNum(2);
+      expect(_infinity.toNumber(), 2);
+
+      _infinity = _infinity.pentate(height: 4);
+      print('${_infinity.toString()}');
+
+      expect(_infinity.toNumber(), double.infinity);
+    });
+  });
+//
+//  group('Random edge cases', () {
+//    test('7 / 100 * 100', () {
+//      Infinity _infinity = Infinity.fromNum(7);
+//      expect(_infinity.toNumber(), 7);
+//
+//      _infinity = _infinity / 100 * 100;
+//      expect(_infinity.toNumber(), 7);
+//    });
+//  });
 //
 //  group('Factorials', () {
 //    test('Simple factorials', () {
@@ -305,28 +366,12 @@ void main() {
 //      expect(_infinity.toNumber(), 3628800);
 //    });
 //
-//    test('Bigger number factorials', () {
-//      Infinity _infinity = Infinity.fromNum(1e50);
-//      expect(_infinity.toNumber(), 1e50);
+//    test('Bigger factorials', () {
+//      Infinity _infinity = Infinity.fromNum(25);
+//      expect(_infinity.toNumber(), 25);
 //
-//      _infinity = _infinity * 1e50;
-//      expect(_infinity.toNumber(), 1e100);
-//    });
-//
-//    test('Biggest number factorials', () {
-//      Infinity _infinity = Infinity.fromNum(5e307);
-//      expect(_infinity.toNumber(), 5e307);
-//
-//      _infinity = _infinity * 2;
-//
-//      expect(_infinity.toNumber(), 1e308);
-//    });
-//
-//    test('Infinity factorials?', () {
-//      Infinity _infinity = Infinity.fromNum(1e308);
-//      expect(_infinity.toNumber(), 1e308);
-//
-//      expect(_infinity.toNumber(), double.infinity);
+//      _infinity = _infinity.factorial();
+//      expect(_infinity.toNumber(), 3628800);
 //    });
 //  });
 }

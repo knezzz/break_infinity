@@ -2,7 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a109aa32-9000-4f6c-b6da-4697a8cd7a73" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/snoopy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/_internal/_egg.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/_internal/add_layer.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/abbreviations/abs.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/abbreviations/clamp.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/abbreviations/gamma.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/abbreviations/reciprocal.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/abbreviations/round.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/comparison/comparison.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/functions/exponential.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/functions/factorial.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/functions/lambert.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/functions/logarithm.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/functions/trigonometry.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/operators/add.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/operators/divide.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/operators/log.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/operators/multiply.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/operators/negate.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/operators/pentate.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/operators/pow.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/operators/root.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/operators/subtract.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/infinity/operators/tetrate.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/infinity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/infinity/infinity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/infinity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/infinity/infinity_basic_operators.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/infinity/infinity_constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/infinity_constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/infinity/infinity_hyper_operators.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/infinity/logger.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/logger.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/infinity_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/infinity_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +71,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556275548631" />
@@ -60,19 +92,13 @@
       <recent name="$PROJECT_DIR$/lib/infinity" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Flutter Test.tests in infinity_test.dart">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -100,12 +126,6 @@
       <properties />
       <listeners />
       <method />
-    </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -190,47 +210,52 @@
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state x="3006" y="379" key="#com.intellij.fileTypes.FileTypeChooser/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584711210488" />
-    <state width="1398" height="564" key="GridCell.Tab.0.bottom" timestamp="1585672744889">
+    <state x="3018" y="323" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585746712259">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state width="1398" height="564" key="GridCell.Tab.0.bottom/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585672744889" />
-    <state width="1398" height="564" key="GridCell.Tab.0.center" timestamp="1585672744888">
+    <state x="3018" y="323" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585746712259" />
+    <state width="1398" height="564" key="GridCell.Tab.0.bottom" timestamp="1585757964234">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state width="1398" height="564" key="GridCell.Tab.0.center/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585672744888" />
-    <state width="1398" height="564" key="GridCell.Tab.0.left" timestamp="1585672744887">
+    <state width="1398" height="564" key="GridCell.Tab.0.bottom/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585757964234" />
+    <state width="1398" height="564" key="GridCell.Tab.0.center" timestamp="1585757964233">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state width="1398" height="564" key="GridCell.Tab.0.left/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585672744887" />
-    <state width="1398" height="564" key="GridCell.Tab.0.right" timestamp="1585672744889">
+    <state width="1398" height="564" key="GridCell.Tab.0.center/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585757964233" />
+    <state width="1398" height="564" key="GridCell.Tab.0.left" timestamp="1585757964232">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state width="1398" height="564" key="GridCell.Tab.0.right/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585672744889" />
+    <state width="1398" height="564" key="GridCell.Tab.0.left/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585757964232" />
+    <state width="1398" height="564" key="GridCell.Tab.0.right" timestamp="1585757964233">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="564" key="GridCell.Tab.0.right/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585757964233" />
     <state x="2789" y="208" key="SettingsEditor" timestamp="1584710556589">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state x="2789" y="208" key="SettingsEditor/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584710556589" />
-    <state width="500" height="1078" key="SwitcherDM" timestamp="1585672541949">
+    <state width="500" height="1078" key="SwitcherDM" timestamp="1585758177051">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state width="500" height="1078" key="SwitcherDM/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585672541949" />
+    <state width="500" height="1078" key="SwitcherDM/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585758177051" />
+    <state width="500" height="1078" key="SwitcherDM/2560.-711.1440.2560/0.23.2560.1417@2560.-711.1440.2560" timestamp="1585737451723" />
     <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585662331164">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.FileHistoryDialog/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585662331164" />
     <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.FileHistoryDialog/2560.-711.1440.2560/0.23.2560.1417@2560.-711.1440.2560" timestamp="1584610224112" />
-    <state x="2960" y="326" width="639" height="486" key="find.popup" timestamp="1585664895250">
+    <state x="2960" y="326" width="639" height="486" key="find.popup" timestamp="1585753238840">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state x="2960" y="326" width="639" height="486" key="find.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585664895250" />
+    <state x="2960" y="326" width="639" height="486" key="find.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585753238840" />
     <state width="450" height="1027" key="javadoc.popup" timestamp="1585139888521">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state width="450" height="1027" key="javadoc.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585139888521" />
-    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup" timestamp="1585662198193">
+    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup" timestamp="1585737833700">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585662198193" />
+    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585737833700" />
   </component>
   <component name="masterDetails">
     <states>
