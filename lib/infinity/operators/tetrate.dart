@@ -6,55 +6,62 @@ extension Tetrate on Infinity {
   /// Works with negative and positive real heights.
   Infinity tetrate({double height = 2, Infinity other}) {
     other ??= Infinity.fromComponents(1, 0, 1);
-    logDebug('Tetrate ${toString()} and ${other.toString()} ($height)');
+    logOperation('Tetrate ${toString()} and ${other.toString()} ($height)');
+
+    Infinity _result;
 
     if (height == double.infinity) {
       final Infinity _negLn = naturalLogarithm().neg();
-      return _negLn.lambertW().divide(_negLn);
-    }
+      _result = _negLn.lambertW().divide(_negLn);
+    } else if (height < 0) {
+      _result = iteratedLog(times: -height.toInt(), base: other);
+    } else {
+      double oldheight = height;
+      height = height.truncateToDouble();
 
-    if (height < 0) {
-      return iteratedLog(times: -height.toInt(), base: other);
-    }
+      double fracheight = oldheight - height;
 
-    double oldheight = height;
-    height = height.truncateToDouble();
+      logVerbose('Tetrate -- fracheight: $fracheight');
 
-    double fracheight = oldheight - height;
-
-    logVerbose('Tetrate -- fracheight: $fracheight');
-
-    if (fracheight != 0) {
-      if (other == Infinity.one()) {
-        ++height;
-        other = Infinity.fromNum(fracheight);
-      } else {
-        logVerbose('Is infinity 10? ${toString()}');
-
-        if (this == Infinity.fromNum(10)) {
-          other = other.layerAdd10(fracheight);
+      if (fracheight != 0) {
+        if (other == Infinity.one()) {
+          ++height;
+          other = Infinity.fromNum(fracheight);
         } else {
-          other = other.layerAdd(fracheight.toInt(), this);
+          logVerbose('Is infinity 10? ${toString()}');
+
+          if (this == Infinity.fromNum(10)) {
+            other = other.layerAdd10(fracheight);
+          } else {
+            other = other.layerAdd(fracheight.toInt(), this);
+          }
+        }
+      }
+
+      for (int i = 0; i < height; ++i) {
+        other = pow(other);
+        //bail if we're NaN
+        if (!other.layer.isFinite || !other.mantissa.isFinite) {
+          _result = other;
+          break;
+        }
+        //shortcut
+        if (other.layer - layer > 3) {
+          _result = Infinity.fromComponents(other.sign, other.layer + height - i - 1, other.mantissa, false);
+          break;
+        }
+        //give up after 100 iterations if nothing is happening
+        if (i > 100) {
+          _result = other;
+          break;
         }
       }
     }
 
-    for (int i = 0; i < height; ++i) {
-      other = pow(other);
-      //bail if we're NaN
-      if (!other.layer.isFinite || !other.mantissa.isFinite) {
-        return other;
-      }
-      //shortcut
-      if (other.layer - layer > 3) {
-        return Infinity.fromComponents(other.sign, other.layer + height - i - 1, other.mantissa, false);
-      }
-      //give up after 100 iterations if nothing is happening
-      if (i > 100) {
-        return other;
-      }
-    }
+    _result ??= other;
 
-    return other;
+    logOperation('Tetrate ${toString()} ($height) is: $_result', exiting: true);
+
+    return _result;
   }
 }

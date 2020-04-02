@@ -2,7 +2,7 @@ part of infinity;
 
 extension Clamp on Infinity {
   Infinity clamp(dynamic min, dynamic max) {
-    logDebug('clamp: $min - $max');
+    logAbbreviation('clamp: $min - $max');
 
     final Infinity _min = getInfinity(min);
     final Infinity _max = getInfinity(max);
@@ -11,14 +11,14 @@ extension Clamp on Infinity {
   }
 
   Infinity clampMin(dynamic min) {
-    logDebug('clampMin: $min');
+    logAbbreviation('clampMin: $min');
     final Infinity _min = getInfinity(min);
 
     return max(_min);
   }
 
   Infinity clampMax(dynamic max) {
-    logDebug('clampMax: $max');
+    logAbbreviation('clampMax: $max');
 
     final Infinity _max = getInfinity(max);
 

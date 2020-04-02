@@ -2,8 +2,9 @@ part of infinity;
 
 extension Divide on Infinity {
   Infinity divide(Infinity other) {
-    logDebug('Divide ${toString()} and ${other.toString()}');
+    logOperation('Divide ${toString()} and ${other.toString()}');
     final Infinity _result = multiply(other.reciprocal());
+    logOperation('${toString()} / ${other.toString()} = $_result', exiting: true);
     return _result;
   }
 

@@ -14,17 +14,22 @@ extension Root on Infinity {
   }
 
   Infinity squareRoot() {
+    logOperation('Square root on ${toString()}');
+    Infinity _result;
+
     if (layer == 0) {
-      return Infinity.fromNum(math.sqrt(sign * mantissa));
+      _result = Infinity.fromNum(math.sqrt(sign * mantissa));
     } else if (layer == 1) {
-      return Infinity.fromComponents(1, 2, mantissa.log10 - 0.3010299956639812);
+      _result = Infinity.fromComponents(1, 2, mantissa.log10() - 0.3010299956639812);
     } else {
-      final Infinity _result =
-          Infinity.fromComponents(sign, layer - 1, mantissa, false) / Infinity.fromComponents(1, 0, 2, false);
+      _result = Infinity.fromComponents(sign, layer - 1, mantissa, false) / Infinity.fromComponents(1, 0, 2, false);
       _result.layer += 1;
       _result.normalize();
-      return _result;
     }
+
+    logOperation('Square root on ${toString()} is $_result', exiting: true);
+
+    return _result;
   }
 
   Infinity root(Infinity other) {

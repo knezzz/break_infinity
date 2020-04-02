@@ -10,40 +10,43 @@ extension Pow on Infinity {
   }
 
   Infinity pow(Infinity other) {
-    logDebug('Pow ${toString()} on ${other.toString()}');
+    logOperation('Pow ${toString()} on ${other.toString()}');
+    Infinity _result;
+
     if (sign == 0) {
-      return this;
+      _result = this;
     } else if (sign == 1 && layer == 0 && mantissa == 1) {
-      return this;
+      _result = this;
     } else if (other.sign == 0) {
-      return Infinity.fromComponents(1, 0, 1);
+      _result = Infinity.fromComponents(1, 0, 1);
     } else if (other.sign == 1 && other.layer == 0 && other.mantissa == 1) {
-      return this;
+      _result = this;
+    } else {
+      _result = (absLog10().multiply(other)).pow10();
+
+      /// Check if end result should be round number
+      if (other.isInt && isInt) {
+        _result = _result.round();
+      }
+
+      if (sign == -1 && other.toNumber() % 2 == 1) {
+        _result = _result.neg();
+      }
     }
 
-    Infinity _result = (absLog10().multiply(other)).pow10();
-
-    /// Check if end result should be round number
-    if (other.isInt && isInt) {
-      _result = _result.round();
-    }
-
-    if (sign == -1 && other.toNumber() % 2 == 1) {
-      return _result.neg();
-    }
+    logOperation('Pow ${toString()} on ${other.toString()} is $_result', exiting: true);
 
     return _result;
   }
 
   Infinity pow10() {
-    logDebug('pow10 on ${toString()}');
+    logOperation('pow10 on ${toString()}');
+    Infinity _result;
+    final num _layer = layer + 1;
 
     if (!layer.isFinite || !mantissa.isFinite) {
       return Infinity.nan();
-    }
-    final num _layer = layer + 1;
-
-    if (layer == 0) {
+    } else if (layer == 0) {
       final num _newMag = math.pow(10, sign * mantissa);
       if (_newMag.isFinite && _newMag.abs() > 0.1) {
         return Infinity.fromComponents(1, 0, _newMag);
@@ -54,14 +57,16 @@ extension Pow on Infinity {
           return Infinity.fromComponents(sign, _layer, mantissa, false);
         }
       }
-    }
-
-    if (sign > 0 && mantissa > 0) {
+    } else if (sign > 0 && mantissa > 0) {
       return Infinity.fromComponents(sign, _layer, mantissa);
     } else if (sign < 0 && mantissa > 0) {
       return Infinity.fromComponents(-sign, _layer, -mantissa);
     }
 
-    return Infinity.one();
+    _result ??= Infinity.one();
+
+    logOperation('pow10 on ${toString()} is $_result', exiting: true);
+
+    return _result;
   }
 }

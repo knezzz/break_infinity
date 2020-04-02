@@ -2,7 +2,7 @@ part of infinity;
 
 extension Multiply on Infinity {
   Infinity multiply(Infinity other) {
-    logInfo('Multiply ${toString()} and ${other.toString()}');
+    logOperation('Multiply ${toString()} and ${other.toString()}', isMainOperation: true);
     Infinity _result;
 
     final bool _compare = layer > other.layer || (layer == other.layer && mantissa.abs() > other.mantissa.abs());
@@ -11,33 +11,35 @@ extension Multiply on Infinity {
 
     if (!layer.isFinite) {
       logVerbose('This layer is not finite!');
-      return this;
+      _result = this;
     } else if (!other.layer.isFinite) {
       logVerbose('Other layer is not finite!');
-      return other;
+      _result = other;
     } else if (sign == 0 || other.sign == 0) {
-      return Infinity.zero();
+      _result = Infinity.zero();
     } else if (layer == other.layer && mantissa == -other.mantissa) {
-      return Infinity.fromComponents(sign * other.sign, 0, 1, false);
+      _result = Infinity.fromComponents(sign * other.sign, 0, 1, false);
     } else if (a.layer == 0 && b.layer == 0) {
-      return Infinity.fromNum(a.sign * b.sign * a.mantissa * b.mantissa);
+      _result = Infinity.fromNum(a.sign * b.sign * a.mantissa * b.mantissa);
     } else if (a.layer >= 3 || (a.layer - b.layer >= 2)) {
-      return Infinity.fromComponents(a.sign * b.sign, a.layer, a.mantissa);
+      _result = Infinity.fromComponents(a.sign * b.sign, a.layer, a.mantissa);
     } else if (a.layer == 1 && b.layer == 0) {
-      return Infinity.fromComponents(a.sign * b.sign, 1, a.mantissa + b.mantissa.log10);
+      _result = Infinity.fromComponents(a.sign * b.sign, 1, a.mantissa + b.mantissa.log10());
     } else if (a.layer == 1 && b.layer == 1) {
-      return Infinity.fromComponents(a.sign * b.sign, 1, a.mantissa + b.mantissa);
+      _result = Infinity.fromComponents(a.sign * b.sign, 1, a.mantissa + b.mantissa);
     } else if (a.layer == 2 && b.layer == 1) {
       final Infinity _newMag = Infinity.fromComponents(a.mantissa.sign.toInt(), a.layer - 1, a.mantissa.abs())
           .add(Infinity.fromComponents(b.mantissa.sign.toInt(), b.layer - 1, b.mantissa.abs()));
-      return Infinity.fromComponents(a.sign * b.sign, _newMag.layer + 1, _newMag.sign * _newMag.mantissa);
+      _result = Infinity.fromComponents(a.sign * b.sign, _newMag.layer + 1, _newMag.sign * _newMag.mantissa);
     } else if (a.layer == 2 && b.layer == 2) {
       final Infinity _newMag = Infinity.fromComponents(a.mantissa.sign.toInt(), a.layer - 1, a.mantissa.abs())
           .add(Infinity.fromComponents(b.mantissa.sign.toInt(), b.layer - 1, b.mantissa.abs()));
-      return Infinity.fromComponents(a.sign * b.sign, _newMag.layer + 1, _newMag.sign * _newMag.mantissa);
+      _result = Infinity.fromComponents(a.sign * b.sign, _newMag.layer + 1, _newMag.sign * _newMag.mantissa);
     }
 
     _result ??= Infinity.zero();
+
+    logOperation('${toString()} * $other = $_result', exiting: true, isMainOperation: true);
     return _result;
   }
 

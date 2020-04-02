@@ -22,7 +22,7 @@ class Infinity with Logger, Logger {
   }
 
   Infinity.fromNum(num value, [bool normalizeNumber = true]) {
-    logVerbose('Infinity from number: $value');
+    logNewInfinity('Infinity from number: $value');
     mantissa = value.toDouble().abs();
     _sign = value.sign.toInt();
     layer = 0;
@@ -31,29 +31,30 @@ class Infinity with Logger, Logger {
       normalize();
     }
 
-    logVerbose('Infinity normalized: ${toDebugString()}');
+    logNormalizedInfinity('Infinity normalized: ${toString()}');
   }
 
   Infinity.fromComponents(this._sign, this.layer, this.mantissa, [bool normalizeNumber = true]) {
-    logVerbose('Infinity from components: [$_sign, $layer, $mantissa]');
+    logNewInfinity('Infinity from components: [$_sign, $layer, $mantissa]');
 
     if (normalizeNumber) {
       normalize();
     }
 
-    logVerbose('Infinity normalized: ${toDebugString()}');
+    logNormalizedInfinity('Infinity normalized: ${toString()}');
   }
 
   void fromMantissaExponent(num mag, num exponent, [bool normalizeNumber = true]) {
+    logNewInfinity('Infinity from mantissa exponent: [$_sign, $layer, $mantissa]');
     layer = 1;
     _sign = mag.toInt().sign;
-    _normalizeMantissa = exponent + mag.abs().log10;
+    _normalizeMantissa = exponent + mag.abs().log10();
 
     if (normalizeNumber) {
       normalize();
     }
 
-    logDebug('Value: ${toStringWithDecimalPlaces(places: 1)}');
+    logNormalizedInfinity('Infinity normalized: ${toString()}');
   }
 
   bool get isInt => mantissa - mantissa.round() == 0;
@@ -80,7 +81,7 @@ class Infinity with Logger, Logger {
     if (sign == 0) {
       return 0;
     } else if (layer == 0) {
-      final int _exp = mantissa.log10.floor();
+      final int _exp = mantissa.log10().floor();
       num _man;
 
       if (mantissa == 5e-324) {
@@ -115,7 +116,7 @@ class Infinity with Logger, Logger {
     if (sign == 0) {
       return 0;
     } else if (layer == 0) {
-      return mantissa.log10.floor();
+      return mantissa.log10().floor();
     } else if (layer == 1) {
       return mantissa.floor();
     } else if (layer == 2) {
@@ -176,7 +177,7 @@ class Infinity with Logger, Logger {
     //Handle shifting from layer 0 to negative layers.
     if (layer == 0 && mantissa < firstNegLayer) {
       layer += 1;
-      mantissa = mantissa.log10;
+      mantissa = mantissa.log10();
       return;
     }
 
@@ -185,7 +186,7 @@ class Infinity with Logger, Logger {
 
     if (absmag >= expLimit) {
       layer += 1;
-      mantissa = signmag * absmag.log10;
+      mantissa = signmag * absmag.log10();
       return;
     } else {
       while (absmag < layerDown && layer > 0) {
@@ -269,7 +270,7 @@ class Infinity with Logger, Logger {
 
   String valueWithDecimalPlaces(num value, int places) {
     int len = places + 1;
-    int numDigits = value.abs().log10.ceil();
+    int numDigits = value.abs().log10().ceil();
     num rounded = (value * math.pow(10, len - numDigits)).round() * math.pow(10, numDigits - len);
 
     return rounded.toStringAsFixed(math.max(len - numDigits, 0));

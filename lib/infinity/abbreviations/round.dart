@@ -2,46 +2,62 @@ part of infinity;
 
 extension Round on Infinity {
   Infinity round() {
-    logDebug('round on ${toString()}');
+    logAbbreviation('round on ${toString()}');
+    Infinity _result;
+
     if (mantissa < 0) {
-      return Infinity.zero();
+      _result = Infinity.zero();
     } else if (layer == 0) {
-      return Infinity.fromComponents(sign, 0, mantissa.roundToDouble());
+      _result = Infinity.fromComponents(sign, 0, mantissa.roundToDouble());
     }
 
-    return this;
+    _result ??= this;
+
+    return _result;
   }
 
   Infinity floor() {
-    logDebug('floor on ${toString()}');
+    logAbbreviation('floor on ${toString()}');
+    Infinity _result;
+
     if (mantissa < 0) {
-      return Infinity.zero();
+      _result = Infinity.zero();
     } else if (layer == 0) {
-      return Infinity.fromComponents(sign, 0, mantissa.floorToDouble());
+      _result = Infinity.fromComponents(sign, 0, mantissa.floorToDouble());
     }
 
-    return this;
+    _result ??= this;
+
+    return _result;
   }
 
   Infinity ceil() {
-    logDebug('ceil on ${toString()}');
+    logAbbreviation('ceil on ${toString()}');
+    Infinity _result;
+
     if (mantissa < 0) {
-      return Infinity.zero();
+      _result = Infinity.zero();
     } else if (layer == 0) {
-      return Infinity.fromComponents(sign, 0, mantissa.ceilToDouble());
+      _result = Infinity.fromComponents(sign, 0, mantissa.ceilToDouble());
     }
 
-    return this;
+    _result ??= this;
+
+    return _result;
   }
 
   Infinity truncate() {
-    logDebug('truncate on ${toString()}');
+    logAbbreviation('truncate on ${toString()}');
+    Infinity _result;
+
     if (mantissa < 0) {
-      return Infinity.zero();
+      _result = Infinity.zero();
     } else if (layer == 0) {
-      return Infinity.fromComponents(sign, 0, mantissa.truncateToDouble());
+      _result = Infinity.fromComponents(sign, 0, mantissa.truncateToDouble());
     }
 
-    return this;
+    _result ??= this;
+
+    return _result;
   }
 }

@@ -2,9 +2,11 @@ part of infinity;
 
 extension Subtract on Infinity {
   Infinity subtract(Infinity other) {
-    logDebug('Subtract ${toString()} and ${other.toString()}');
+    logOperation('Subtract ${toString()} and ${other.toString()}');
 
     final Infinity _result = add(other.neg());
+
+    logOperation('${toString()} - ${other.toString()} = $_result', exiting: true);
     return _result;
   }
 

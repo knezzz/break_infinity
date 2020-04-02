@@ -2,54 +2,61 @@ part of infinity;
 
 extension Gamma on Infinity {
   Infinity gamma() {
+    logAbbreviation('gamma on ${toString()}');
+    Infinity _result;
+
     if (mantissa < 0) {
-      return reciprocal();
+      _result = reciprocal();
     } else if (layer == 0) {
       if (this < Infinity.fromComponents(1, 0, 24, false)) {
-        return Infinity.fromNum(fGamma(sign * mantissa));
+        _result = Infinity.fromNum(fGamma(sign * mantissa));
+      } else {
+        num t = mantissa - 1;
+        num l = 0.9189385332046727; //0.5*math.log(2*pi)
+        l = (l + ((t + 0.5) * math.log(t)));
+        l = l - t;
+        num n2 = t * t;
+        num np = t;
+        num lm = 12 * np;
+        num adj = 1 / lm;
+        num l2 = l + adj;
+
+        if (l2 == l) {
+          _result = Infinity.fromNum(l).exp();
+        } else {
+          l = l2;
+          np = np * n2;
+          lm = 360 * np;
+          adj = 1 / lm;
+          l2 = l - adj;
+          if (l2 == l) {
+            _result = Infinity.fromNum(l).exp();
+          } else {
+            l = l2;
+            np = np * n2;
+            lm = 1260 * np;
+            num lt = 1 / lm;
+            l = l + lt;
+            np = np * n2;
+            lm = 1680 * np;
+            lt = 1 / lm;
+            l = l - lt;
+            _result = Infinity.fromNum(l).exp();
+          }
+        }
       }
-
-      num t = mantissa - 1;
-      num l = 0.9189385332046727; //0.5*math.log(2*pi)
-      l = (l + ((t + 0.5) * math.log(t)));
-      l = l - t;
-      num n2 = t * t;
-      num np = t;
-      num lm = 12 * np;
-      num adj = 1 / lm;
-      num l2 = l + adj;
-
-      if (l2 == l) {
-        return Infinity.fromNum(l).exp();
-      }
-
-      l = l2;
-      np = np * n2;
-      lm = 360 * np;
-      adj = 1 / lm;
-      l2 = l - adj;
-      if (l2 == l) {
-        return Infinity.fromNum(l).exp();
-      }
-
-      l = l2;
-      np = np * n2;
-      lm = 1260 * np;
-      num lt = 1 / lm;
-      l = l + lt;
-      np = np * n2;
-      lm = 1680 * np;
-      lt = 1 / lm;
-      l = l - lt;
-      return Infinity.fromNum(l).exp();
     } else if (layer == 1) {
-      return (this * naturalLogarithm().subtract(Infinity.one())).exp();
+      _result = (this * naturalLogarithm().subtract(Infinity.one())).exp();
     } else {
-      return exp();
+      _result = exp();
     }
+
+    return _result;
   }
 
   num fGamma(num n) {
+    logAbbreviation('fGamma on ${toString()}');
+
     if (!n.isFinite) {
       return n;
     }

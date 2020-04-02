@@ -1,7 +1,7 @@
 part of infinity;
 
 extension on num {
-  double get log10 {
+  double log10() {
     return math.log10e * math.log(this);
   }
 }
@@ -14,7 +14,7 @@ int maxSignificantDigits = 17; //Maximum number of digits of precision to assume
 
 /// If we're ABOVE this value, increase a layer. (9e15 is close to the largest double eger that can fit in a int.)
 const double expLimit = 9e15;
-double layerDown = expLimit.log10; //If we're BELOW this value, drop down a layer. About 15.954.
+double layerDown = expLimit.log10(); //If we're BELOW this value, drop down a layer. About 15.954.
 
 ///At layer 0, smaller non-zero numbers than this become layer 1 numbers with negative mag. After that the pattern continues as normal.
 double firstNegLayer = 1 / expLimit;

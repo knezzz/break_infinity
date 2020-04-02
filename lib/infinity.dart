@@ -13,6 +13,7 @@ part 'infinity/_internal/add_layer.dart';
 part 'infinity/abbreviations/abs.dart';
 part 'infinity/abbreviations/clamp.dart';
 part 'infinity/abbreviations/gamma.dart';
+part 'infinity/abbreviations/negate.dart';
 part 'infinity/abbreviations/reciprocal.dart';
 part 'infinity/abbreviations/round.dart';
 
@@ -35,7 +36,6 @@ part 'infinity/operators/add.dart';
 part 'infinity/operators/divide.dart';
 part 'infinity/operators/log.dart';
 part 'infinity/operators/multiply.dart';
-part 'infinity/operators/negate.dart';
 part 'infinity/operators/pentate.dart';
 part 'infinity/operators/pow.dart';
 part 'infinity/operators/root.dart';

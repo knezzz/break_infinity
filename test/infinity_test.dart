@@ -187,33 +187,6 @@ void main() {
 
         expect(_infinity.toNumber(), 268435456);
       });
-
-      test('Simple pow 2^32', () {
-        Infinity _infinity = Infinity.fromNum(2);
-        expect(_infinity.toNumber(), 2);
-
-        _infinity = _infinity.pow(Infinity.fromNum(32));
-
-        expect(_infinity.toNumber(), 4294967296);
-      });
-
-      test('Simple pow 2^36', () {
-        Infinity _infinity = Infinity.fromNum(2);
-        expect(_infinity.toNumber(), 2);
-
-        _infinity = _infinity.pow(Infinity.fromNum(36));
-
-        expect(_infinity.toNumber(), 68719476736);
-      });
-
-      test('Simple pow 2^40', () {
-        Infinity _infinity = Infinity.fromNum(2);
-        expect(_infinity.toNumber(), 2);
-
-        _infinity = _infinity.pow(Infinity.fromNum(40));
-
-        expect(_infinity.toNumber(), 1099511627776);
-      });
     });
 
     test('Complex pow', () {

@@ -2,7 +2,7 @@ part of infinity;
 
 extension Add on Infinity {
   Infinity add(Infinity other) {
-    logInfo('Add ${toString()} and ${other.toString()}');
+    logOperation('Add ${toString()} and ${other.toString()}', isMainOperation: true);
     Infinity _result;
 
     final bool _compare = cmpAbs(other) > 0;
@@ -30,28 +30,28 @@ extension Add on Infinity {
     } else if (layerA - layerB >= 2) {
       _result = a;
     } else if (layerA == 0 && layerB == -1) {
-      if ((b.mantissa - a.mantissa.log10).abs() > maxSignificantDigits) {
+      if ((b.mantissa - a.mantissa.log10()).abs() > maxSignificantDigits) {
         logVerbose('Returning bigger number!', debugString: a.toDebugString());
         _result = a;
       } else {
-        final num _magdiff = math.pow(10, a.mantissa.log10 - b.mantissa).toDouble();
+        final num _magdiff = math.pow(10, a.mantissa.log10() - b.mantissa).toDouble();
         final num _mantissa = b.sign + (a.sign * _magdiff);
 
         logVerbose('Number magDif: $_magdiff');
         logVerbose('Number mantissa: $_mantissa');
-        _result = Infinity.fromComponents(_mantissa.sign.toInt(), 1, b.sign + _mantissa.abs().log10);
+        _result = Infinity.fromComponents(_mantissa.sign.toInt(), 1, b.sign + _mantissa.abs().log10());
       }
     } else if (layerA == 1 && layerB == 0) {
-      if ((a.mantissa - b.mantissa.log10).abs() > maxSignificantDigits) {
+      if ((a.mantissa - b.mantissa.log10()).abs() > maxSignificantDigits) {
         logVerbose('Returning bigger number!', debugString: a.toDebugString());
         _result = a;
       } else {
-        final num _magdiff = math.pow(10, a.mantissa - b.mantissa.log10).toDouble();
+        final num _magdiff = math.pow(10, a.mantissa - b.mantissa.log10()).toDouble();
         final num _mantissa = b.sign + (a.sign * _magdiff);
 
         logVerbose('Number magDif: $_magdiff');
         logVerbose('Number mantissa: $_mantissa');
-        _result = Infinity.fromComponents(_mantissa.sign.toInt(), 1, b.mantissa.log10 + _mantissa.abs().log10);
+        _result = Infinity.fromComponents(_mantissa.sign.toInt(), 1, b.mantissa.log10() + _mantissa.abs().log10());
       }
     } else if ((a.mantissa - b.mantissa).abs() > maxSignificantDigits) {
       logVerbose('Returning bigger number!', debugString: a.toDebugString());
@@ -62,8 +62,10 @@ extension Add on Infinity {
 
       logVerbose('Number magDif: $_magdiff');
       logVerbose('Number mantissa: $_mantissa');
-      _result = Infinity.fromComponents(_mantissa.sign.toInt(), 1, b.mantissa + _mantissa.abs().log10);
+      _result = Infinity.fromComponents(_mantissa.sign.toInt(), 1, b.mantissa + _mantissa.abs().log10());
     }
+
+    logOperation('${toString()} + $other = $_result', isMainOperation: true, exiting: true);
 
     return _result;
   }

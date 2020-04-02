@@ -2,7 +2,7 @@ part of infinity;
 
 extension Reciprocal on Infinity {
   Infinity reciprocal() {
-    logDebug('reciprocal on ${toString()}');
+    logAbbreviation('reciprocal on ${toString()}');
     if (mantissa == 0) {
       return Infinity.nan();
     } else if (layer == 0) {

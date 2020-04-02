@@ -2,7 +2,7 @@ part of infinity;
 
 extension LessThen on Infinity {
   int compare(Infinity other) {
-    logDebug('Comparing ${toString()} with ${other.toString()}');
+    logComparisons('Comparing ${toString()} with ${other.toString()}');
 
     if (sign > other.sign) {
       return 1;
@@ -14,7 +14,7 @@ extension LessThen on Infinity {
   }
 
   int cmpAbs(Infinity other) {
-    logDebug('cmpAbs ${toString()} and ${other.toString()}');
+    logComparisons('cmpAbs ${toString()} and ${other.toString()}');
 
     final int layerA = (mantissa > 0 ? layer : -layer).toInt();
     final int layerB = (other.mantissa > 0 ? other.layer : -other.layer).toInt();
@@ -67,7 +67,7 @@ extension LessThen on Infinity {
   }
 
   Infinity max(dynamic other) {
-    logDebug('max: ${toString()} and ${other.toString()}');
+    logComparisons('max: ${toString()} and ${other.toString()}');
     final Infinity _inf = getInfinity(other);
 
     if (_inf != null) {
@@ -78,7 +78,7 @@ extension LessThen on Infinity {
   }
 
   Infinity min(dynamic other) {
-    logDebug('min: ${toString()} and ${other.toString()}');
+    logComparisons('min: ${toString()} and ${other.toString()}');
     final Infinity _inf = getInfinity(other);
 
     if (_inf != null) {
@@ -89,7 +89,7 @@ extension LessThen on Infinity {
   }
 
   Infinity maxAbs(dynamic other) {
-    logDebug('maxAbs: ${toString()} and ${other.toString()}');
+    logComparisons('maxAbs: ${toString()} and ${other.toString()}');
     final Infinity _inf = getInfinity(other);
 
     if (_inf != null) {
@@ -100,7 +100,7 @@ extension LessThen on Infinity {
   }
 
   Infinity minAbs(dynamic other) {
-    logDebug('minAbs: ${toString()} and ${other.toString()}');
+    logComparisons('minAbs: ${toString()} and ${other.toString()}');
 
     final Infinity _inf = getInfinity(other);
 
