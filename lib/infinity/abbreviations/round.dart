@@ -1,0 +1,63 @@
+part of infinity;
+
+extension Round on Infinity {
+  Infinity round() {
+    logAbbreviation('round on ${toString()}');
+    Infinity _result;
+
+    if (mantissa < 0) {
+      _result = Infinity.zero();
+    } else if (layer == 0) {
+      _result = Infinity.fromComponents(sign, 0, mantissa.roundToDouble());
+    }
+
+    _result ??= this;
+
+    return _result;
+  }
+
+  Infinity floor() {
+    logAbbreviation('floor on ${toString()}');
+    Infinity _result;
+
+    if (mantissa < 0) {
+      _result = Infinity.zero();
+    } else if (layer == 0) {
+      _result = Infinity.fromComponents(sign, 0, mantissa.floorToDouble());
+    }
+
+    _result ??= this;
+
+    return _result;
+  }
+
+  Infinity ceil() {
+    logAbbreviation('ceil on ${toString()}');
+    Infinity _result;
+
+    if (mantissa < 0) {
+      _result = Infinity.zero();
+    } else if (layer == 0) {
+      _result = Infinity.fromComponents(sign, 0, mantissa.ceilToDouble());
+    }
+
+    _result ??= this;
+
+    return _result;
+  }
+
+  Infinity truncate() {
+    logAbbreviation('truncate on ${toString()}');
+    Infinity _result;
+
+    if (mantissa < 0) {
+      _result = Infinity.zero();
+    } else if (layer == 0) {
+      _result = Infinity.fromComponents(sign, 0, mantissa.truncateToDouble());
+    }
+
+    _result ??= this;
+
+    return _result;
+  }
+}

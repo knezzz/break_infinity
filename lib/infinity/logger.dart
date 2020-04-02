@@ -1,7 +1,5 @@
 enum Severity { verbose, debug, info, warning, error, critical }
 
-/// Logger is mixin that will log messages to console if debug is set to on
-/// [debug] will default to false so it doesn't clog the terminal
 mixin Logger {
   final bool debug = true;
   final Severity showSeverity = Severity.verbose;
@@ -18,10 +16,6 @@ mixin Logger {
 
   void logError(Object error, {StackTrace stackTrace}) {
     logDebug(error.toString(), stackTrace: stackTrace, severity: Severity.error);
-  }
-
-  void logInfo(Object info) {
-    logDebug(info.toString(), severity: Severity.info);
   }
 
   void logVerbose(Object error, {String debugString, StackTrace stackTrace}) {
@@ -44,6 +38,42 @@ mixin Logger {
     }
 
     return '${_format(_now.hour)}:${_format(_now.minute)}:${_format(_now.second)}.${_format(_now.millisecond, padding: 3)}';
+  }
+
+  void logOperation(String message, {bool isMainOperation = false, bool exiting = false}) {
+    if (_showLog(isMainOperation ? Severity.info : Severity.debug)) {
+      print('${_getPrefix(isMainOperation ? Severity.info : Severity.debug)}${exiting ? '<=' : '=>'} $message');
+    }
+  }
+
+  void logFunction(String message, {bool exiting = false}) {
+    if (_showLog(Severity.verbose)) {
+      print('${_getPrefix(Severity.verbose)}${exiting ? '<=' : '=>'} $message');
+    }
+  }
+
+  void logAbbreviation(String message) {
+    if (_showLog(Severity.verbose)) {
+      print('${_getPrefix(Severity.verbose)}=> $message');
+    }
+  }
+
+  void logComparisons(String message) {
+    if (_showLog(Severity.verbose)) {
+      print('${_getPrefix(Severity.verbose)}=> $message');
+    }
+  }
+
+  void logNewInfinity(String message) {
+    if (_showLog(Severity.verbose)) {
+      print('${_getPrefix(Severity.verbose)}====> $message');
+    }
+  }
+
+  void logNormalizedInfinity(String message) {
+    if (_showLog(Severity.verbose)) {
+      print('${_getPrefix(Severity.verbose)}=> $message');
+    }
   }
 
   String _getSeverityColor(Severity severity) {
