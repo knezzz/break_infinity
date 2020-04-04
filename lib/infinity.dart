@@ -35,6 +35,7 @@ part 'infinity/infinity_constants.dart';
 part 'infinity/operators/add.dart';
 part 'infinity/operators/divide.dart';
 part 'infinity/operators/log.dart';
+part 'infinity/operators/modulo.dart';
 part 'infinity/operators/multiply.dart';
 part 'infinity/operators/pentate.dart';
 part 'infinity/operators/pow.dart';

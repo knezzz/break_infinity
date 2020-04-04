@@ -1,6 +1,6 @@
 part of infinity;
 
-class Infinity with Logger, Logger {
+class Infinity with Logger implements Comparable<Infinity> {
   Infinity(this.mantissa, this.exponent);
 
   Infinity.zero() {
@@ -44,20 +44,9 @@ class Infinity with Logger, Logger {
     logNormalizedInfinity('Infinity normalized: ${toString()}');
   }
 
-  void fromMantissaExponent(num mag, num exponent, [bool normalizeNumber = true]) {
-    logNewInfinity('Infinity from mantissa exponent: [$_sign, $layer, $mantissa]');
-    layer = 1;
-    _sign = mag.toInt().sign;
-    _normalizeMantissa = exponent + mag.abs().log10();
-
-    if (normalizeNumber) {
-      normalize();
-    }
-
-    logNormalizedInfinity('Infinity normalized: ${toString()}');
-  }
-
   bool get isInt => mantissa - mantissa.round() == 0;
+  bool get isNegative => sign == -1;
+  bool get isPositive => sign == 1;
 
   num mantissa;
   num exponent;
@@ -93,7 +82,8 @@ class Infinity with Logger, Logger {
     } else if (layer == 1) {
       final num _residue = mantissa - mantissa.floor();
 
-      return (sign * math.pow(10, _residue)).round();
+      /// TODO(lukaknezic): Remove round from here!
+      return (sign * math.pow(10, _residue)).round(); // Lose precision for doubles, gain accuracy on int
     }
 
     return sign;
@@ -130,6 +120,19 @@ class Infinity with Logger, Logger {
   }
 
   final Map<num, num> _powersOf10 = <num, num>{};
+
+  void fromMantissaExponent(num mag, num exponent, [bool normalizeNumber = true]) {
+    logNewInfinity('Infinity from mantissa exponent: [$_sign, $layer, $mantissa]');
+    layer = 1;
+    _sign = mag.toInt().sign;
+    _normalizeMantissa = exponent + mag.abs().log10();
+
+    if (normalizeNumber) {
+      normalize();
+    }
+
+    logNormalizedInfinity('Infinity normalized: ${toString()}');
+  }
 
   num powerOf10(num power) {
     if (_powersOf10 == null) {
@@ -303,5 +306,19 @@ class Infinity with Logger, Logger {
   @override
   int get hashCode {
     return <num>[sign, layer, mantissa].hashCode;
+  }
+
+  @override
+  int compareTo(Infinity other) {
+    logComparisons('Comparing ${toString()} with ${other.toString()}');
+
+    if (sign > other.sign) {
+      return 1;
+    }
+    if (sign < other.sign) {
+      return -1;
+    }
+
+    return sign * cmpAbs(other);
   }
 }

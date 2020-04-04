@@ -69,4 +69,14 @@ extension Pow on Infinity {
 
     return _result;
   }
+
+  Infinity operator ^(dynamic other) {
+    final Infinity _inf = getInfinity(other);
+
+    if (_inf != null) {
+      return pow(_inf);
+    }
+
+    throw ArgumentError('Bad arguments for pow: $this^$other');
+  }
 }

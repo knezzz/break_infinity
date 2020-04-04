@@ -17,4 +17,14 @@ extension Divide on Infinity {
 
     throw ArgumentError('Bad arguments to divide: $this / $other');
   }
+
+  Infinity operator ~/(dynamic other) {
+    final Infinity _inf = getInfinity(other);
+
+    if (_inf != null) {
+      return divide(_inf).truncate();
+    }
+
+    throw ArgumentError('Bad arguments to floor-divide: $this ~/ $other');
+  }
 }

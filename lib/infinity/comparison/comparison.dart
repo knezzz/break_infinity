@@ -1,18 +1,6 @@
 part of infinity;
 
-extension LessThen on Infinity {
-  int compare(Infinity other) {
-    logComparisons('Comparing ${toString()} with ${other.toString()}');
-
-    if (sign > other.sign) {
-      return 1;
-    }
-    if (sign < other.sign) {
-      return -1;
-    }
-    return sign * cmpAbs(other);
-  }
-
+extension Comparators on Infinity {
   int cmpAbs(Infinity other) {
     logComparisons('cmpAbs ${toString()} and ${other.toString()}');
 
@@ -42,7 +30,7 @@ extension LessThen on Infinity {
     final Infinity _inf = getInfinity(other);
 
     if (_inf != null) {
-      return _inf.compare(this) == -1;
+      return _inf.compareTo(this) == -1;
     }
 
     throw ArgumentError('Bad arguments: $this / $other');
@@ -52,7 +40,7 @@ extension LessThen on Infinity {
     final Infinity _inf = getInfinity(other);
 
     if (_inf != null) {
-      return _inf.compare(this) == 1;
+      return _inf.compareTo(this) == 1;
     }
 
     throw ArgumentError('Bad arguments: $this / $other');

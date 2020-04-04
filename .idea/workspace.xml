@@ -2,35 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a109aa32-9000-4f6c-b6da-4697a8cd7a73" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/infinity/operators/modulo.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/basic_operators_test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/infinity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/_internal/add_layer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/_internal/add_layer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/abbreviations/abs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/abbreviations/abs.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/abbreviations/clamp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/abbreviations/clamp.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/abbreviations/gamma.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/abbreviations/gamma.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/abbreviations/reciprocal.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/abbreviations/reciprocal.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/infinity/abbreviations/round.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/abbreviations/round.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/infinity/comparison/comparison.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/comparison/comparison.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/functions/exponential.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/functions/exponential.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/infinity/functions/factorial.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/functions/factorial.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/functions/lambert.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/functions/lambert.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/functions/logarithm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/functions/logarithm.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/infinity/infinity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/infinity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/infinity_constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/infinity_constants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/logger.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/logger.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/infinity/operators/add.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/operators/add.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/infinity/operators/divide.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/operators/divide.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/operators/log.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/operators/log.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/operators/multiply.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/operators/multiply.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/operators/negate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/abbreviations/negate.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/operators/pentate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/operators/pentate.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/infinity/operators/pow.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/operators/pow.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/operators/root.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/operators/root.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/operators/subtract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/operators/subtract.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/infinity/operators/tetrate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/infinity/operators/tetrate.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/infinity_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/infinity_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/infinity_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/hyper_operators_test.dart" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +73,13 @@
       <recent name="$PROJECT_DIR$/lib/infinity" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter Test.tests in infinity_test.dart">
+  <component name="RunManager" selected="Flutter Test.Test infinity">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -124,12 +114,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -156,16 +140,16 @@
       <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
       <method v="2" />
     </configuration>
+    <configuration name="Test infinity" type="FlutterTestConfigType" factoryName="Flutter Test">
+      <option name="testDir" value="$PROJECT_DIR$/test" />
+      <method v="2" />
+    </configuration>
     <configuration name="Tetrate" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="Tetrate" />
       <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="FlutterTestConfigType" factoryName="Flutter Test">
-      <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tests in infinity_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" nameIsGenerated="true">
       <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
       <method v="2" />
     </configuration>
@@ -185,6 +169,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Flutter Test.Test infinity" />
+      <item itemvalue="Flutter Test.Addition" />
+      <item itemvalue="Flutter Test.Biggest number multiplication" />
+      <item itemvalue="Flutter Test.Factorials" />
+      <item itemvalue="Flutter Test.Power" />
+      <item itemvalue="Flutter Test.Tetrate" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Flutter Test.Tetrate" />
@@ -213,13 +205,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="2744" y="231" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585900042670">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="2744" y="231" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585900042670" />
     <state x="3006" y="379" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584711210488">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
@@ -228,48 +226,52 @@
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state x="3018" y="323" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585746712259" />
-    <state width="1398" height="564" key="GridCell.Tab.0.bottom" timestamp="1585846466422">
+    <state width="1398" height="564" key="GridCell.Tab.0.bottom" timestamp="1586026870432">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state width="1398" height="564" key="GridCell.Tab.0.bottom/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585846466422" />
-    <state width="1398" height="564" key="GridCell.Tab.0.center" timestamp="1585846466421">
+    <state width="1398" height="564" key="GridCell.Tab.0.bottom/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586026870432" />
+    <state width="1398" height="564" key="GridCell.Tab.0.center" timestamp="1586026870431">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state width="1398" height="564" key="GridCell.Tab.0.center/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585846466421" />
-    <state width="1398" height="564" key="GridCell.Tab.0.left" timestamp="1585846466420">
+    <state width="1398" height="564" key="GridCell.Tab.0.center/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586026870431" />
+    <state width="1398" height="564" key="GridCell.Tab.0.left" timestamp="1586026870430">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state width="1398" height="564" key="GridCell.Tab.0.left/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585846466420" />
-    <state width="1398" height="564" key="GridCell.Tab.0.right" timestamp="1585846466421">
+    <state width="1398" height="564" key="GridCell.Tab.0.left/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586026870430" />
+    <state width="1398" height="564" key="GridCell.Tab.0.right" timestamp="1586026870432">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state width="1398" height="564" key="GridCell.Tab.0.right/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585846466421" />
+    <state width="1398" height="564" key="GridCell.Tab.0.right/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586026870432" />
     <state x="2789" y="208" key="SettingsEditor" timestamp="1584710556589">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state x="2789" y="208" key="SettingsEditor/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584710556589" />
-    <state width="500" height="1078" key="SwitcherDM" timestamp="1585846432011">
+    <state width="500" height="1078" key="SwitcherDM" timestamp="1586026325370">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state width="500" height="1078" key="SwitcherDM/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585846432011" />
+    <state width="500" height="1078" key="SwitcherDM/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586026325370" />
     <state width="500" height="1078" key="SwitcherDM/2560.-711.1440.2560/0.23.2560.1417@2560.-711.1440.2560" timestamp="1585737451723" />
+    <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1586026852155">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/2560.-711.1440.2560/0.23.2560.1417@2560.-711.1440.2560" timestamp="1586026852155" />
     <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585662331164">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.FileHistoryDialog/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585662331164" />
     <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.FileHistoryDialog/2560.-711.1440.2560/0.23.2560.1417@2560.-711.1440.2560" timestamp="1584610224112" />
-    <state x="2960" y="326" width="639" height="486" key="find.popup" timestamp="1585753238840">
+    <state x="2960" y="326" width="639" height="486" key="find.popup" timestamp="1586023695945">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state x="2960" y="326" width="639" height="486" key="find.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585753238840" />
+    <state x="2960" y="326" width="639" height="486" key="find.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586023695945" />
     <state width="450" height="1027" key="javadoc.popup" timestamp="1585139888521">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
     <state width="450" height="1027" key="javadoc.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585139888521" />
-    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup" timestamp="1585737833700">
+    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup" timestamp="1586026382963">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>
-    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585737833700" />
+    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586026382963" />
   </component>
   <component name="masterDetails">
     <states>
