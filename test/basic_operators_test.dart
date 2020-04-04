@@ -28,6 +28,20 @@ void main() {
       expect(_infinity.toNumber(), 2e305);
     });
 
+    test('Take bigger layer infinity', () {
+      final Infinity _smaller = Infinity.fromNum(1e305);
+      Infinity _infinity = Infinity.fromNum(1e305);
+      expect(_infinity.toNumber(), 1e305);
+
+      _infinity = _infinity * _infinity;
+      expect(_infinity.toString(), '1e610');
+
+      // Nothing should change
+      _infinity = _infinity + _smaller;
+      expect(_infinity.toNumber(), double.infinity);
+      expect(_infinity.toString(), '1e610');
+    });
+
     test('Bigger than biggest addition!', () {
       Infinity _infinity = Infinity.fromNum(1e308);
       expect(_infinity.toNumber(), 1e308);
