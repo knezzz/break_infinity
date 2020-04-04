@@ -66,6 +66,7 @@ class Infinity with Logger implements Comparable<Infinity> {
   }
 
   num layer;
+  bool shouldRound = false;
 
   num get normalizedMantissa {
     if (sign == 0) {
@@ -83,6 +84,10 @@ class Infinity with Logger implements Comparable<Infinity> {
       return sign * _man;
     } else if (layer == 1) {
       final num _residue = mantissa - mantissa.floor();
+
+      if (shouldRound) {
+        return (sign * math.pow(10, _residue)).round(); // Lose precision for doubles, gain accuracy on int
+      }
 
       return sign * math.pow(10, _residue); // Lose precision for doubles, gain accuracy on int
     }

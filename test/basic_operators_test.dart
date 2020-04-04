@@ -93,7 +93,7 @@ void main() {
     });
 
     test('Biggest number multiplication', () {
-      Infinity _infinity = Infinity.fromNum(5e307);
+      Infinity _infinity = Infinity.fromNum(5e307, false);
       expect(_infinity.toNumber(), 5e307);
 
       _infinity = _infinity * 2;

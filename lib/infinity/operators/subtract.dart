@@ -6,7 +6,13 @@ extension Subtract on Infinity {
 
     final Infinity _result = add(other.neg());
 
+    if (isInt && other.isInt) {
+      logVerbose('Subtraction is in int! Rounding result!');
+      _result.shouldRound = true;
+    }
+
     logOperation('${toString()} - ${other.toString()} = $_result', exiting: true);
+
     return _result;
   }
 

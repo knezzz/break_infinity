@@ -66,6 +66,7 @@ extension Add on Infinity {
 
     if (isInt && other.isInt) {
       logVerbose('Addition is in int! Rounding result!');
+      _result.shouldRound = true;
     }
 
     logOperation('${toString()} + $other = $_result', isMainOperation: true, exiting: true);
