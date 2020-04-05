@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a109aa32-9000-4f6c-b6da-4697a8cd7a73" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/basic_operators_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/basic_operators_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/hyper_operators_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/hyper_operators_test.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1VCNsOqbJHypESxQMVP3dHbiIDe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556275548631" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/infinity/abbreviations" />
+      <recent name="$PROJECT_DIR$/lib/infinity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/infinity" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Dart Test.All tests">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All tests" type="DartTestRunConfigurationType" factoryName="Dart Test" temporary="true">
+      <option name="filePath" value="$PROJECT_DIR$/test" />
+      <option name="scope" value="FOLDER" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Addition" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Addition" />
+      <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Factorials" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Factorials" />
+      <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Power" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Power" />
+      <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test infinity" type="FlutterTestConfigType" factoryName="Flutter Test">
+      <option name="testDir" value="$PROJECT_DIR$/test" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Tetrate" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Tetrate" />
+      <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="FlutterTestConfigType" factoryName="Flutter Test">
+      <option name="testFile" value="$PROJECT_DIR$/test/infinity_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Dart Test.All tests" />
+      <item itemvalue="Flutter Test.Test infinity" />
+      <item itemvalue="Flutter Test.Addition" />
+      <item itemvalue="Flutter Test.Factorials" />
+      <item itemvalue="Flutter Test.Power" />
+      <item itemvalue="Flutter Test.Tetrate" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Dart Test.All tests" />
+        <item itemvalue="Flutter Test.Tetrate" />
+        <item itemvalue="Flutter Test.Factorials" />
+        <item itemvalue="Flutter Test.Addition" />
+        <item itemvalue="Flutter Test.Power" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a109aa32-9000-4f6c-b6da-4697a8cd7a73" name="Default Changelist" comment="" />
+      <created>1556275052404</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556275052404</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2997" y="309" key="#Addition_in_basic_operators_test.dart" timestamp="1586095228200">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="2997" y="309" key="#Addition_in_basic_operators_test.dart/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586095228200" />
+    <state x="2744" y="231" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586095277603">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="2744" y="231" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586095277603" />
+    <state x="3006" y="379" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584711210488">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="3006" y="379" key="#com.intellij.fileTypes.FileTypeChooser/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584711210488" />
+    <state x="3018" y="323" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585746712259">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="3018" y="323" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585746712259" />
+    <state width="1398" height="564" key="GridCell.Tab.0.bottom" timestamp="1586095279359">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="564" key="GridCell.Tab.0.bottom/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586095279359" />
+    <state width="1398" height="564" key="GridCell.Tab.0.center" timestamp="1586095279358">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="564" key="GridCell.Tab.0.center/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586095279358" />
+    <state width="1398" height="564" key="GridCell.Tab.0.left" timestamp="1586095279357">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="564" key="GridCell.Tab.0.left/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586095279357" />
+    <state width="1398" height="564" key="GridCell.Tab.0.right" timestamp="1586095279358">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="564" key="GridCell.Tab.0.right/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586095279358" />
+    <state x="2789" y="208" key="SettingsEditor" timestamp="1584710556589">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="2789" y="208" key="SettingsEditor/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1584710556589" />
+    <state width="500" height="1078" key="SwitcherDM" timestamp="1586095086840">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state width="500" height="1078" key="SwitcherDM/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586095086840" />
+    <state width="500" height="1078" key="SwitcherDM/2560.-711.1440.2560/0.23.2560.1417@2560.-711.1440.2560" timestamp="1585737451723" />
+    <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1586026852155">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/2560.-711.1440.2560/0.23.2560.1417@2560.-711.1440.2560" timestamp="1586026852155" />
+    <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585662331164">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.FileHistoryDialog/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585662331164" />
+    <state x="2660" y="-611" width="1240" height="2360" key="com.intellij.history.integration.ui.views.FileHistoryDialog/2560.-711.1440.2560/0.23.2560.1417@2560.-711.1440.2560" timestamp="1584610224112" />
+    <state x="2960" y="326" width="639" height="486" key="find.popup" timestamp="1586023695945">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="2960" y="326" width="639" height="486" key="find.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586023695945" />
+    <state width="450" height="1027" key="javadoc.popup" timestamp="1585139888521">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state width="450" height="1027" key="javadoc.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1585139888521" />
+    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup" timestamp="1586095089405">
+      <screen x="2560" y="-711" width="1440" height="2560" />
+    </state>
+    <state x="3029" y="-108" width="670" height="1638" key="search.everywhere.popup/2560.-711.1440.2560/0.0.2560.1440@2560.-711.1440.2560" timestamp="1586095089405" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
