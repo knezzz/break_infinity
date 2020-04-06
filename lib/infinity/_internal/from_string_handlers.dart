@@ -172,9 +172,9 @@ Infinity _handleEPowFormat(String value) {
 
     String layerString = '';
 
-    List<int> _chars = _newParts[1].runes.toList(growable: false);
+    final List<int> _chars = _newParts[1].runes.toList(growable: false);
 
-    _chars.forEach((int charCode) {
+    void _processChar(int charCode) {
       if ((charCode >= 43 && charCode <= 57) || charCode == 101) {
         //is "0" to "9" or "+" or "-" or "." or "e" (or "," or "/")
         layerString += charCode.toString();
@@ -183,7 +183,9 @@ Infinity _handleEPowFormat(String value) {
         layer = double.tryParse(layerString);
         mantissa = double.tryParse(_newParts[1].substring(_chars.indexOf(charCode) + 1));
       }
-    });
+    }
+
+    _chars.forEach(_processChar);
 
     if (layer != null && mantissa != null) {
       return Infinity.fromComponents(sign, layer, mantissa);

@@ -16,7 +16,7 @@ extension Divide on Infinity {
     if (_inf != null) {
       _result = divide(_inf);
 
-      /// TODO(lukaknezic): Find out better way to do this!
+      /// (lukaknezic): Find out better way to do this!
       // If result of mod is 0 then round up the division!
       _result.roundMantissa(value: this % _inf == Infinity.zero());
 
