@@ -2,8 +2,8 @@ part of infinity;
 
 extension Modulo on Infinity {
   Infinity modulo(Infinity other) {
-    Infinity _result;
     logOperation('Mod ${toString()} and ${other.toString()}');
+    Infinity _result;
 
     if (other == Infinity.zero()) {
       _result = Infinity.zero();

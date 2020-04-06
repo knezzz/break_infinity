@@ -19,9 +19,9 @@ mixin Logger {
   }
 
   void logVerbose(Object error, {String debugString, StackTrace stackTrace}) {
-    logDebug(error.toString(), stackTrace: stackTrace, severity: Severity.verbose);
+    logDebug('== ${error.toString()}', stackTrace: stackTrace, severity: Severity.verbose);
     if (debugString != null) {
-      logDebug(debugString, severity: Severity.verbose);
+      logDebug('== $debugString', severity: Severity.verbose);
     }
   }
 
@@ -65,8 +65,8 @@ mixin Logger {
   }
 
   void logNewInfinity(String message) {
-    if (_showLog(Severity.verbose)) {
-      print('${_getPrefix(Severity.verbose)}====> $message');
+    if (_showLog(Severity.warning)) {
+      print('${_getPrefix(Severity.warning)}=> $message');
     }
   }
 
@@ -83,9 +83,9 @@ mixin Logger {
       case Severity.debug:
         return '\x1b[94m';
       case Severity.info:
-        return '\x1b[93m';
+        return '\x1b[34m';
       case Severity.warning:
-        return '\x1b[33m';
+        return '\x1b[32m';
       case Severity.error:
         return '\x1b[91m';
       case Severity.critical:

@@ -22,7 +22,7 @@ extension Root on Infinity {
     } else if (layer == 1) {
       _result = Infinity.fromComponents(1, 2, mantissa.log10() - 0.3010299956639812);
     } else {
-      _result = Infinity.fromComponents(sign, layer - 1, mantissa, false) / Infinity.fromComponents(1, 0, 2, false);
+      _result = Infinity.fromComponents(sign, layer - 1, mantissa, false) / Infinity.fromNum(2, false);
       _result.layer += 1;
       _result.normalize();
     }

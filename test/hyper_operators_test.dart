@@ -86,7 +86,6 @@ void main() {
       expect(_infinity.toNumber(), 2);
 
       _infinity = _infinity.tetrate(height: 4);
-      print('${_infinity.toString()}');
 
       expect(_infinity.toNumber(), 65536);
     });
@@ -96,7 +95,6 @@ void main() {
       expect(_infinity.toNumber(), 2);
 
       _infinity = _infinity.tetrate(height: 5);
-      print('${_infinity.toString()}');
 
       expect(_infinity.toNumber(), double.infinity);
     });
@@ -106,7 +104,6 @@ void main() {
       expect(_infinity.toNumber(), 2);
 
       _infinity = _infinity.tetrate(height: 6);
-      print('${_infinity.toString()}');
 
       expect(_infinity.toNumber(), double.infinity);
     });
@@ -128,7 +125,6 @@ void main() {
       expect(_infinity.toNumber(), 2);
 
       _infinity = _infinity.pentate(height: 3);
-      print('${_infinity.toString()}');
 
       expect(_infinity.toNumber(), 65536);
     });
@@ -138,7 +134,6 @@ void main() {
       expect(_infinity.toNumber(), 2.1);
 
       _infinity = _infinity.pentate(height: 3);
-      print('${_infinity.toString()}');
 
       expect(_infinity.toNumber(), double.infinity);
       expect(_infinity.toString(), 'ee23.598944666302792');
@@ -149,7 +144,6 @@ void main() {
       expect(_infinity.toNumber(), 2);
 
       _infinity = _infinity.pentate(height: 4);
-      print('${_infinity.toString()}');
 
       expect(_infinity.toNumber(), double.infinity);
       expect(_infinity.toString(), '(e^65532.0)19727.780405607016');
