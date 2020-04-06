@@ -48,15 +48,19 @@ class Infinity with Logger implements Comparable<Infinity> {
     logNewInfinity('Infinity from string: [$value]');
     Infinity _result;
 
+    value = value.toLowerCase();
+
     if (value.contains('^^^')) {
       _result = _handlePentateString(value);
     } else if (value.contains('^^')) {
       _result = _handleTetrateString(value);
     } else if (value.contains('^')) {
       _result = _handlePowString(value);
+    } else if (value.contains('pt') || value.contains('p')) {
+      _result = _handlePtString(value);
+    } else if (value.contains('e')) {
+      _result = _handleEString(value);
     }
-
-    value = value.toLowerCase();
 
     if (_result != null) {
       sign = _result.sign;
