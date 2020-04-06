@@ -22,7 +22,7 @@ class Infinity with Logger implements Comparable<Infinity> {
   }
 
   Infinity.fromNum(num value, [bool normalizeNumber = true]) {
-    logNewInfinity('Infinity from number: $value');
+    logNewInfinity('Infinity from number: $value - Normalize: $normalizeNumber');
     mantissa = value.toDouble().abs();
     _sign = value.sign.toInt();
     layer = 0;
@@ -31,20 +31,49 @@ class Infinity with Logger implements Comparable<Infinity> {
       normalize();
     }
 
-    logNormalizedInfinity('Infinity normalized: ${toString()}');
+    logNormalizedInfinity('Infinity normalized: ${toDebugString()}');
   }
 
   Infinity.fromComponents(this._sign, this.layer, this.mantissa, [bool normalizeNumber = true]) {
-    logNewInfinity('Infinity from components: [$_sign, $layer, $mantissa]');
+    logNewInfinity('Infinity from components: [$_sign, $layer, $mantissa] - Normalize: $normalizeNumber');
 
     if (normalizeNumber) {
       normalize();
     }
 
-    logNormalizedInfinity('Infinity normalized: ${toString()}');
+    logNormalizedInfinity('Infinity normalized: ${toDebugString()}');
   }
 
-  bool get isInt => mantissa - mantissa.round() == 0;
+  Infinity.fromString(String value) {
+    logNewInfinity('Infinity from string: [$value]');
+    Infinity _result;
+
+    value = value.toLowerCase();
+
+    if (value.contains('^^^')) {
+      _result = _handlePentateString(value);
+    } else if (value.contains('^^')) {
+      _result = _handleTetrateString(value);
+    } else if (value.contains('^')) {
+      _result = _handlePowString(value);
+    } else if (value.contains('pt') || value.contains('p')) {
+      _result = _handlePtString(value);
+    } else if (value.contains('e')) {
+      _result = _handleEString(value);
+    }
+
+    if (_result != null) {
+      sign = _result.sign;
+      mantissa = _result.mantissa;
+      layer = _result.layer;
+    }
+
+    logNormalizedInfinity('Infinity normalized: ${toDebugString()}');
+  }
+
+  bool get isInt =>
+      (layer == 0 && mantissa - mantissa.round() == 0) ||
+      (layer == 1 && (toNumber() - toNumber().roundToDouble() == 0));
   bool get isNegative => sign == -1;
   bool get isPositive => sign == 1;
 
@@ -64,12 +93,13 @@ class Infinity with Logger implements Comparable<Infinity> {
   }
 
   num layer;
+  bool _roundResult = false;
 
   num get normalizedMantissa {
     if (sign == 0) {
       return 0;
     } else if (layer == 0) {
-      final int _exp = mantissa.log10().floor();
+      final int _exp = mantissa.log10().round();
       num _man;
 
       if (mantissa == 5e-324) {
@@ -82,23 +112,14 @@ class Infinity with Logger implements Comparable<Infinity> {
     } else if (layer == 1) {
       final num _residue = mantissa - mantissa.floor();
 
-      /// TODO(lukaknezic): Remove round from here!
-      return (sign * math.pow(10, _residue)).round(); // Lose precision for doubles, gain accuracy on int
+      if (_roundResult) {
+        return (sign * math.pow(10, _residue)).roundToDouble(); // Lose precision for doubles, gain accuracy on int
+      }
+
+      return sign * math.pow(10, _residue); // Lose precision for doubles, gain accuracy on int
     }
 
     return sign;
-  }
-
-  set _normalizeMantissa(num value) {
-    if (layer <= 2) {
-      fromMantissaExponent(value, normalizedExponent);
-    } else {
-      sign = value.toInt().sign;
-      if (sign == 0) {
-        layer = 0;
-        exponent = 0;
-      }
-    }
   }
 
   num get normalizedExponent {
@@ -115,37 +136,12 @@ class Infinity with Logger implements Comparable<Infinity> {
     }
   }
 
-  set _normalizeExponent(num value) {
-    fromMantissaExponent(normalizedMantissa, value);
-  }
-
-  final Map<num, num> _powersOf10 = <num, num>{};
-
-  void fromMantissaExponent(num mag, num exponent, [bool normalizeNumber = true]) {
-    logNewInfinity('Infinity from mantissa exponent: [$_sign, $layer, $mantissa]');
-    layer = 1;
-    _sign = mag.toInt().sign;
-    _normalizeMantissa = exponent + mag.abs().log10();
-
-    if (normalizeNumber) {
-      normalize();
-    }
-
-    logNormalizedInfinity('Infinity normalized: ${toString()}');
+  void roundMantissa({bool value = true}) {
+    _roundResult = value;
   }
 
   num powerOf10(num power) {
-    if (_powersOf10 == null) {
-      logVerbose('Adding powers of 10 lookup table!', debugString: toDebugString());
-      for (num i = numberExpMin + 1; i <= numberExpMax; i++) {
-        _powersOf10.putIfAbsent(i, () {
-          return num.tryParse('1e$i');
-        });
-      }
-      logDebug('Lookup table size: ${_powersOf10.length}');
-    }
-
-    return _powersOf10[power + indexOf0InPowersOf10];
+    return double.tryParse('1e$power');
   }
 
   void normalize() {
@@ -267,7 +263,7 @@ class Infinity with Logger implements Comparable<Infinity> {
   }
 
   String toDebugString() {
-    return 'Sign: $_sign Mantissa: $mantissa Layer: $layer :: ${toStringWithDecimalPlaces(places: 4)}';
+    return '[$_sign, $mantissa, $layer] -- ${toString()}';
   }
 
   String valueWithDecimalPlaces(num value, int places) {

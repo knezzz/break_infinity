@@ -8,6 +8,7 @@ part 'infinity/_internal/_egg.dart';
 
 /// Internal stuff
 part 'infinity/_internal/add_layer.dart';
+part 'infinity/_internal/from_string_handlers.dart';
 
 /// Abbreviations
 part 'infinity/abbreviations/abs.dart';

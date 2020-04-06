@@ -4,6 +4,10 @@ extension on num {
   double log10() {
     return math.log10e * math.log(this);
   }
+
+  double magLog10() {
+    return sign.toDouble() * abs().log10();
+  }
 }
 
 const int indexOf0InPowersOf10 = 323;

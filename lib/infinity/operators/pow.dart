@@ -45,22 +45,23 @@ extension Pow on Infinity {
     final num _layer = layer + 1;
 
     if (!layer.isFinite || !mantissa.isFinite) {
-      return Infinity.nan();
+      _result = Infinity.nan();
     } else if (layer == 0) {
       final num _newMag = math.pow(10, sign * mantissa);
       if (_newMag.isFinite && _newMag.abs() > 0.1) {
-        return Infinity.fromComponents(1, 0, _newMag);
+        logVerbose('New mag is: $_newMag');
+        _result = Infinity.fromNum(_newMag, false);
       } else {
         if (sign == 0) {
-          return Infinity.one();
+          _result = Infinity.one();
         } else {
-          return Infinity.fromComponents(sign, _layer, mantissa, false);
+          _result = Infinity.fromComponents(sign, _layer, mantissa, false);
         }
       }
     } else if (sign > 0 && mantissa > 0) {
-      return Infinity.fromComponents(sign, _layer, mantissa);
+      _result = Infinity.fromComponents(sign, _layer, mantissa);
     } else if (sign < 0 && mantissa > 0) {
-      return Infinity.fromComponents(-sign, _layer, -mantissa);
+      _result = Infinity.fromComponents(-sign, _layer, -mantissa);
     }
 
     _result ??= Infinity.one();

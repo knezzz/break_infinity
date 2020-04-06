@@ -7,6 +7,7 @@ extension Subtract on Infinity {
     final Infinity _result = add(other.neg());
 
     logOperation('${toString()} - ${other.toString()} = $_result', exiting: true);
+
     return _result;
   }
 

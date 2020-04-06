@@ -16,7 +16,7 @@ void main() {
       expect(_infinity.toNumber(), 1e50);
 
       _infinity = _infinity + 1e50;
-      expect(_infinity.toNumber().roundToDouble(), 2e50);
+      expect(_infinity.toNumber(), 2e50);
     });
 
     test('Biggest number addition', () {
@@ -34,12 +34,12 @@ void main() {
       expect(_infinity.toNumber(), 1e305);
 
       _infinity = _infinity * _infinity;
-      expect(_infinity.toString(), '1e610');
+      expect(_infinity.toString(), '1.0e610');
 
       // Nothing should change
       _infinity = _infinity + _smaller;
       expect(_infinity.toNumber(), double.infinity);
-      expect(_infinity.toString(), '1e610');
+      expect(_infinity.toString(), '1.0e610');
     });
 
     test('Bigger than biggest addition!', () {
@@ -49,6 +49,7 @@ void main() {
       _infinity = _infinity + 1e308;
 
       expect(_infinity.toNumber(), double.infinity);
+      expect(_infinity.toString(), '2.0e308');
     });
   });
 
@@ -66,7 +67,7 @@ void main() {
       expect(_infinity.toNumber(), 1e50);
 
       _infinity = _infinity - 1e49;
-      expect(_infinity.toNumber().roundToDouble(), 9e49);
+      expect(_infinity.toNumber(), 9e49);
     });
 
     test('Biggest number subtraction', () {
@@ -106,7 +107,7 @@ void main() {
     });
 
     test('Biggest number multiplication', () {
-      Infinity _infinity = Infinity.fromNum(5e307);
+      Infinity _infinity = Infinity.fromNum(5e307, false);
       expect(_infinity.toNumber(), 5e307);
 
       _infinity = _infinity * 2;
