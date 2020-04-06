@@ -34,12 +34,12 @@ void main() {
       expect(_infinity.toNumber(), 1e305);
 
       _infinity = _infinity * _infinity;
-      expect(_infinity.toString(), '1e610');
+      expect(_infinity.toString(), '1.0e610');
 
       // Nothing should change
       _infinity = _infinity + _smaller;
       expect(_infinity.toNumber(), double.infinity);
-      expect(_infinity.toString(), '1e610');
+      expect(_infinity.toString(), '1.0e610');
     });
 
     test('Bigger than biggest addition!', () {
@@ -49,7 +49,7 @@ void main() {
       _infinity = _infinity + 1e308;
 
       expect(_infinity.toNumber(), double.infinity);
-      expect(_infinity.toString(), '2e308');
+      expect(_infinity.toString(), '2.0e308');
     });
   });
 

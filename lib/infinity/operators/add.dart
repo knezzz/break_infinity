@@ -52,9 +52,6 @@ extension Add on Infinity {
     } else if ((a.mantissa - b.mantissa).abs() > maxSignificantDigits) {
       logVerbose('Returning bigger number!', debugString: a.toDebugString());
       _result = a;
-    } else if ((a.toNumber() + b.toNumber()).isFinite) {
-      logVerbose('Result is finite!', debugString: a.toDebugString());
-      _result = Infinity.fromNum(a.toNumber() + b.toNumber(), false);
     } else {
       final num _magdiff = math.pow(10, a.mantissa - b.mantissa).toDouble();
       final num _mantissa = b.sign + (a.sign * _magdiff);
@@ -66,7 +63,7 @@ extension Add on Infinity {
 
     if (isInt && other.isInt) {
       logVerbose('Addition is in int! Rounding result!');
-      _result.shouldRound = true;
+      _result._shouldRound = true;
     }
 
     logOperation('${toString()} + $other = $_result', isMainOperation: true, exiting: true);

@@ -41,7 +41,7 @@ extension Multiply on Infinity {
 
     if (isInt && other.isInt) {
       logVerbose('Multiplication is in int! Rounding result!');
-      _result.shouldRound = true;
+      _result._shouldRound = true;
     }
 
     logOperation('${toString()} * $other = $_result', exiting: true, isMainOperation: true);

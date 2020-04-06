@@ -11,9 +11,14 @@ extension Divide on Infinity {
 
   Infinity operator /(dynamic other) {
     final Infinity _inf = getInfinity(other);
+    Infinity _result;
 
     if (_inf != null) {
-      return divide(_inf);
+      _result = divide(_inf);
+
+      // If result of mod is 0 then round up the division!
+      _result._shouldRound = this % _inf == Infinity.zero();
+      return _result;
     }
 
     throw ArgumentError('Bad arguments to divide: $this / $other');
@@ -25,7 +30,7 @@ extension Divide on Infinity {
 
     if (_inf != null) {
       _result = divide(_inf).truncate();
-      _result.shouldRound = true;
+      _result._shouldRound = true;
       return _result;
     }
 
