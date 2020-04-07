@@ -5,3 +5,5 @@
 A new Flutter project.
 
 ## Big number library for dart
+Numbers range:
+10^-(10^^1e308) - 10^^1e308
