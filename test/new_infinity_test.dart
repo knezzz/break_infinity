@@ -60,6 +60,31 @@ void main() {
         final Infinity _infinity = Infinity.fromString('4e12e12');
         expect(_infinity.toString(), '4.067944321083047e12000000000000');
       });
+
+      test('E (eeN)', () {
+        final Infinity _infinity = Infinity.fromString('ee5');
+        expect(_infinity.toString(), '1.0e100000');
+      });
+
+      test('E (eeNeX)', () {
+        final Infinity _infinity = Infinity.fromString('ee1e5');
+        expect(_infinity.toString(), 'ee100000.0');
+      });
+
+      test('E (eeeN)', () {
+        final Infinity _infinity = Infinity.fromString('eee5');
+        expect(_infinity.toString(), 'ee100000.0');
+      });
+
+      test('E (eeeNeX)', () {
+        final Infinity _infinity = Infinity.fromString('eee1e5');
+        expect(_infinity.toString(), 'eee100000.0');
+      });
+
+      test('E (eeeeeeN)', () {
+        final Infinity _infinity = Infinity.fromString('eeeeee2');
+        expect(_infinity.toString(), 'eeeee100.0');
+      });
     });
   });
 }

@@ -16,24 +16,24 @@ extension Tetrate on Infinity {
     } else if (height < 0) {
       _result = iteratedLog(times: -height.toInt(), base: other);
     } else {
-      double oldheight = height;
+      final double oldHeight = height;
       height = height.truncateToDouble();
 
-      double fracheight = oldheight - height;
+      final double fracHeight = oldHeight - height;
 
-      logVerbose('Tetrate -- fracheight: $fracheight');
+      logVerbose('Tetrate -- fracHeight: $fracHeight');
 
-      if (fracheight != 0) {
+      if (fracHeight != 0) {
         if (other == Infinity.one()) {
           ++height;
-          other = Infinity.fromNum(fracheight);
+          other = Infinity.fromNum(fracHeight);
         } else {
           logVerbose('Is infinity 10? ${toString()}');
 
           if (this == Infinity.fromNum(10)) {
-            other = other.layerAdd10(fracheight);
+            other = other.layerAdd10(fracHeight);
           } else {
-            other = other.layerAdd(fracheight.toInt(), this);
+            other = other.layerAdd(fracHeight.toInt(), this);
           }
         }
       }

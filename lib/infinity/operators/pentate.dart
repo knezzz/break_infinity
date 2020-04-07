@@ -9,20 +9,20 @@ extension Pentate on Infinity {
 
     Infinity _result;
 
-    double oldheight = height;
+    final double oldHeight = height;
     height = height.truncateToDouble();
-    double fracheight = oldheight - height;
+    final double fracHeight = oldHeight - height;
 
     //I have no idea if this is a meaningful approximation for pentation to continuous heights, but it is monotonic and continuous.
-    if (fracheight != 0) {
+    if (fracHeight != 0) {
       if (other == Infinity.one()) {
         ++height;
-        other = Infinity.fromNum(fracheight);
+        other = Infinity.fromNum(fracHeight);
       } else {
         if (this == Infinity.fromNum(10)) {
-          other = other.layerAdd10(fracheight);
+          other = other.layerAdd10(fracHeight);
         } else {
-          other = other.layerAdd(fracheight.toInt(), this);
+          other = other.layerAdd(fracHeight.toInt(), this);
         }
       }
     }

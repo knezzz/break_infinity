@@ -11,11 +11,11 @@ extension Gamma on Infinity {
       if (this < Infinity.fromComponents(1, 0, 24, false)) {
         _result = Infinity.fromNum(fGamma(sign * mantissa));
       } else {
-        num t = mantissa - 1;
+        final num t = mantissa - 1;
         num l = 0.9189385332046727; //0.5*math.log(2*pi)
-        l = (l + ((t + 0.5) * math.log(t)));
+        l = l + ((t + 0.5) * math.log(t));
         l = l - t;
-        num n2 = t * t;
+        final num n2 = t * t;
         num np = t;
         num lm = 12 * np;
         num adj = 1 / lm;
@@ -77,7 +77,7 @@ extension Gamma on Infinity {
     double l = 0.9189385332046727; //0.5*math.log(2*Math.PI)
     l = l + (n + 0.5) * math.log(n);
     l = l - n;
-    num n2 = n * n;
+    final num n2 = n * n;
     num np = n;
     l = l + 1 / (12 * np);
     np = np * n2;

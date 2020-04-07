@@ -106,11 +106,8 @@ Infinity _handleEString(String value) {
     final List<String> eParts = value.split('e');
     final int _eCount = eParts.length - 1;
 
-    final num mantissa = double.tryParse(eParts[0]);
+    final num mantissa = double.tryParse(eParts[0]) ?? 1.0;
     num exponent = double.tryParse(eParts[eParts.length - 1]);
-
-    print('E count: $_eCount');
-    print('E count: $eParts');
 
     if (_eCount == 0) {
       final double numberAttempt = double.tryParse(value);
@@ -127,10 +124,8 @@ Infinity _handleEString(String value) {
         _result = Infinity.fromComponents(mantissa.sign.toInt(), 1, exponent + mantissa.abs().log10());
       }
     } else {
-      if (mantissa == null || mantissa == 0) {
-        _result = Infinity.zero();
-      } else if (_eCount >= 2) {
-        final double _v = double.tryParse(eParts[eParts.length - 2]);
+      if (_eCount >= 2) {
+        final double _v = double.tryParse(eParts[eParts.length - 2]) ?? double.nan;
 
         if (_v.isFinite) {
           exponent *= _v.sign;
@@ -143,7 +138,7 @@ Infinity _handleEString(String value) {
           _result = Infinity.fromComponents(eParts[0] == '-' ? -1 : 1, _eCount, exponent);
         } else {
           if (_eCount == 2) {
-            _result = Infinity.fromComponents(1, 2, exponent, false).multiply(Infinity.fromNum(mantissa));
+            _result = Infinity.fromComponents(1, 2, exponent).multiply(Infinity.fromNum(mantissa));
           } else {
             _result = Infinity.fromComponents(mantissa.sign.toInt(), _eCount, exponent);
           }
