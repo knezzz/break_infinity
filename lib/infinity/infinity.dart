@@ -267,9 +267,9 @@ class Infinity with Logger implements Comparable<Infinity> {
   }
 
   String valueWithDecimalPlaces(num value, int places) {
-    int len = places + 1;
-    int numDigits = value.abs().log10().ceil();
-    num rounded = (value * math.pow(10, len - numDigits)).round() * math.pow(10, numDigits - len);
+    final int len = places + 1;
+    final int numDigits = value.abs().log10().ceil();
+    final num rounded = (value * math.pow(10, len - numDigits)).round() * math.pow(10, numDigits - len);
 
     return rounded.toStringAsFixed(math.max(len - numDigits, 0));
   }

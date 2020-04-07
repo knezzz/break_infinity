@@ -184,7 +184,7 @@ extension Factorial on Infinity {
     } else if (layer == 0 && toNumber() <= _factorials.length) {
       _result = Infinity.fromNum(_factorials[toNumber().toInt()]);
     } else {
-      int errorFixer = 1;
+      const int errorFixer = 1;
       double e = toNumber().toDouble();
 
       if (e < 500) {
