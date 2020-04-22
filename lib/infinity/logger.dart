@@ -1,7 +1,7 @@
 enum Severity { verbose, debug, info, warning, error, critical }
 
 mixin Logger {
-  final bool debug = true;
+  final bool debug = false;
   final Severity showSeverity = Severity.verbose;
 
   bool _showLog(Severity severity) {

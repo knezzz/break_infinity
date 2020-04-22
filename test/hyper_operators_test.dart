@@ -80,6 +80,35 @@ void main() {
     });
   });
 
+  group('Root', () {
+    test('Small root', () {
+      Infinity _infinity = Infinity.fromNum(65536);
+      expect(_infinity.toNumber(), 65536);
+
+      _infinity = _infinity.root(Infinity.fromNum(16));
+
+      expect(_infinity.toNumber(), 2);
+    });
+
+    test('Bigger root', () {
+      Infinity _infinity = Infinity.fromNum(1048576);
+      expect(_infinity.toNumber(), 1048576);
+
+      _infinity = _infinity.root(Infinity.fromNum(20));
+
+      expect(_infinity.toNumber().toStringAsPrecision(2), '2.0');
+    });
+
+    test('Complex root', () {
+      Infinity _infinity = Infinity.fromNum(54108198.377272);
+      expect(_infinity.toNumber(), 54108198.377272);
+
+      _infinity = _infinity.root(Infinity.fromNum(24));
+
+      expect(_infinity.toNumber().toStringAsPrecision(2), '2.1');
+    });
+  });
+
   group('Tetrate', () {
     test('Small tetrate', () {
       Infinity _infinity = Infinity.fromNum(2);
